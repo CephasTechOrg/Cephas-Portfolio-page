@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cephas Osei-Bonsu | Software Developer & AI Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <header class="site-header" id="siteHeader">
+        <div class="container header-inner">
+            <div class="logo"><span class="logo-blue">Cephas</span> Portfolio</div>
+            <nav class="nav">
+                <a class="active" href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="cta">
+                <button class="download">Download CV ▾</button>
+            </div>
+            <button class="mobile-nav-toggle" id="mobileNavToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#" class="mobile-download">Download CV ▾</a>
+    </nav>
+
+    <main id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-left">
+                <div class="blob-wrap">
+                    <div class="neon-glow"></div>
+                    <svg viewBox="0 0 500 500" class="blob-svg" preserveAspectRatio="xMidYMid slice">
+                        <defs>
+                            <clipPath id="blobClip" clipPathUnits="objectBoundingBox">
+                                <path
+                                    d="M0.39,0.07 C0.58,-0.03 0.82,0.03 0.92,0.20 C1.02,0.37 0.95,0.60 0.85,0.77 C0.75,0.94 0.52,1.01 0.33,0.96 C0.14,0.92 -0.01,0.74 0.01,0.56 C0.03,0.38 0.20,0.18 0.39,0.07Z" />
+                            </clipPath>
+                        </defs>
+                        <image href="assets/images/cephas.png" x="0" y="0" width="500" height="500"
+                            clip-path="url(#blobClip)" preserveAspectRatio="xMidYMid slice"></image>
+                        <path
+                            d="M117,131 C173,66 302,20 356,97 C410,174 384,305 333,356 C283,407 160,382 104,322 C48,262 58,197 117,131Z"
+                            fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="4" stroke-linecap="round"
+                            stroke-linejoin="round" opacity="0.95"></path>
+                    </svg>
+                    <!-- Rotating ribbon - Now properly working on mobile -->
+                    <svg class="ribbon" viewBox="0 0 400 400">
+                        <path d="M20,210 C90,120 130,60 220,60 C310,60 360,150 300,230 C240,310 120,310 20,210Z"
+                            fill="none" stroke="#36bafc" stroke-width="6" opacity="0.6" stroke-linecap="round" />
+                        <path d="M32,226 C95,140 140,86 225,86 C310,86 348,170 290,240 C232,310 140,296 32,226Z"
+                            fill="none" stroke="#00b1ff" stroke-width="4" opacity="0.4" stroke-linecap="round" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <p class="hi">Hello, I'm</p>
+                <h1 class="name">Cephas Osei-Bonsu</h1>
+                <h2 class="role">And I'm a <span id="typing" class="typing"></span><span class="cursor">|</span></h2>
+                <p class="lead">I'm a passionate software developer and AI engineer with a mission to leverage
+                    technology to solve real-world problems and make a positive impact on society.</p>
+                <div class="socials">
+                    <a href="https://github.com/CephasTechOrg" class="social" target="_blank"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/osei-bonsu-cephas-911731326/" class="social" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://https://wa.me/+233551560593" class="social" target="_blank"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/cephas_bonsu" class="social" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+                <div class="buttons">
+                    <button class="btn hire">Hire Me</button>
+                    <button class="btn outline">Contact Me</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat">
+                <div class="stat-number">30+</div>
+                <div class="stat-text">Projects Completed</div>
+            </div>
+            <div class="divider"></div>
+            <div class="stat">
+                <div class="stat-number">500+</div>
+                <div class="stat-text">Contributions</div>
+            </div>
+            <div class="divider"></div>
+            <div class="stat">
+                <div class="stat-number">3+</div>
+                <div class="stat-text">Years Experience</div>
+            </div>
+            <div class="divider"></div>
+            <div class="stat">
+                <div class="stat-number">10+</div>
+                <div class="stat-text">Open Source Contributions</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div>
+                    <p class="about-text">I'm a passionate software developer and AI engineer with a mission to leverage
+                        technology to solve real-world problems and make a positive impact on society. My ultimate goal
+                        is to create an environment that empowers people to reach for their dreams.</p>
+                    <p class="about-text">I believe in the power of technology to transform lives, especially for those
+                        in need. Through my work, I aim to build solutions that are not only innovative but also
+                        accessible and beneficial to underserved communities.</p>
+                    <p class="about-text">When I'm not coding, you can find me exploring new technologies, contributing
+                        to open-source projects, or mentoring aspiring developers. I'm always excited about
+                        opportunities to collaborate on projects that align with my vision of creating a better world
+                        for everyone.</p>
+
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Problem Solving</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Innovation Focused</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Community Impact</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Future-Oriented</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                        alt="About Me">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Professional Skillset</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <div class="skill-name">JavaScript</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <div class="skill-name">Node.js</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="skill-name">React</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <div class="skill-name">Android</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="skill-name">Capacitor</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="skill-name">Python</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="skill-name">FastAPI</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="skill-name">PostgreSQL</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="skill-name">Firebase</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="skill-name">API Integration</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <div class="skill-name">HTML5</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <div class="skill-name">CSS3</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <div class="skill-name">Git</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="skill-name">Machine Learning</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div class="skill-name">NLP</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="skill-name">Prompt Engineering</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="skill-name">Arduino</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="skill-name">C++</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-adobe"></i>
+                    </div>
+                    <div class="skill-name">Photoshop</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="skill-name">Microsoft Publisher</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">My Portfolio</h2>
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-item" data-project="1">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                        alt="AI-Powered Education Platform" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">AI Education Platform</h3>
+                        <p class="portfolio-category">AI & Web Development</p>
+                        <p class="portfolio-description">An intelligent learning platform that adapts to student needs
+                            using machine learning algorithms.</p>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="portfolio-link"><i class="fab fa-github"></i> Source Code</a>
+                            <a href="#" class="portfolio-link view-details" data-project="1">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="portfolio-item" data-project="2">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                        alt="Healthcare Analytics Dashboard" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Healthcare Analytics</h3>
+                        <p class="portfolio-category">Data Visualization & AI</p>
+                        <p class="portfolio-description">A dashboard for healthcare providers to analyze patient data
+                            and predict health trends.</p>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="portfolio-link"><i class="fab fa-github"></i> Source Code</a>
+                            <a href="#" class="portfolio-link view-details" data-project="2">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="portfolio-item" data-project="3">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                        alt="Community Resource Finder" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Community Resource Finder</h3>
+                        <p class="portfolio-category">Web Development</p>
+                        <p class="portfolio-description">A platform connecting underserved communities with local
+                            resources and support services.</p>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="portfolio-link"><i class="fab fa-github"></i> Source Code</a>
+                            <a href="#" class="portfolio-link view-details" data-project="3">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="portfolio-item" data-project="4">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                        alt="E-commerce Analytics Platform" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">E-commerce Analytics</h3>
+                        <p class="portfolio-category">Data Analytics & Dashboard</p>
+                        <p class="portfolio-description">An analytics platform for e-commerce businesses to track
+                            performance and customer behavior.</p>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="portfolio-link"><i class="fab fa-github"></i> Source Code</a>
+                            <a href="#" class="portfolio-link view-details" data-project="4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="portfolio-item" data-project="5">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                        alt="Financial Planning App" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Financial Planning App</h3>
+                        <p class="portfolio-category">Mobile Development & Finance</p>
+                        <p class="portfolio-description">A mobile application that helps users manage their finances and
+                            plan for the future.</p>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="portfolio-link"><i class="fab fa-github"></i> Source Code</a>
+                            <a href="#" class="portfolio-link view-details" data-project="5">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="portfolio-item" data-project="6">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                        alt="IoT Home Automation" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">IoT Home Automation</h3>
+                        <p class="portfolio-category">IoT & Embedded Systems</p>
+                        <p class="portfolio-description">A smart home system that allows users to control their home
+                            devices remotely.</p>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="portfolio-link"><i class="fab fa-github"></i> Source Code</a>
+                            <a href="#" class="portfolio-link view-details" data-project="6">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modals -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">Project Title</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="Project Image" class="modal-image">
+                <p id="modal-description" class="modal-description">Project description will appear here.</p>
+                <div class="modal-tech" id="modal-tech">
+                    <!-- Technology tags will be inserted here -->
+                </div>
+                <div class="modal-links" id="modal-links">
+                    <!-- Project links will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">Achievements & Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <img src="assets/images/nasa.jpeg" alt="NASA Space Apps Challenge 2024" class="certification-image">
+                    <div class="certification-header">
+                        <div class="certification-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div>
+                            <h3 class="certification-title">NASA Space Apps Challenge</h3>
+                            <p class="certification-org">Participant / Developer</p>
+                            <p class="certification-date"></p>
+                        </div>
+                    </div>
+                    <p class="certification-description">
+                        Collaborated in NASA's global hackathon focused on solving real-world challenges using open NASA
+                        datasets from Earth and space. Designed and developed a web-based application that leveraged
+                        NASA's open-source environmental and satellite data to visualize climate patterns and support
+                        data-driven insights.
+                    </p>
+                </div>
+
+                <div class="certification-card">
+                    <img src="assets/images/american.jpeg" alt="American Mathematics Olympiad 2023"
+                        class="certification-image">
+                    <div class="certification-header">
+                        <div class="certification-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div>
+                            <h3 class="certification-title">American Mathematics Olympiad </h3>
+                            <p class="certification-org">Top 10 (Global) & Top 3 (Ghana)</p>
+                            <p class="certification-date"></p>
+                        </div>
+                    </div>
+                    <p class="certification-description">
+                        Achieved global top-10 ranking in the American Mathematics Olympiad, demonstrating advanced
+                        analytical thinking, logical reasoning, and problem-solving skills. This experience strengthened
+                        the mathematical foundation that supports my work in AI development and algorithmic programming.
+                    </p>
+                </div>
+
+                <div class="certification-card">
+                    <img src="assets/images/ai-agents.jpeg" alt="AI Agent Certification"
+                        class="certification-image">
+                    <div class="certification-header">
+                        <div class="certification-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div>
+                            <h3 class="certification-title">AI Agent Certification</h3>
+                            <p class="certification-org">AI and Machine Learning</p>
+                            <p class="certification-date"></p>
+                        </div>
+                    </div>
+                    <p class="certification-description">Earned certification in AI Agents from SimpliLearn
+                        (SkillUp), demonstrating applied understanding of intelligent agent systems, prompt engineering,
+                        and autonomous reasoning frameworks. This certification reflects the foundation of my AI
+                        journey, which I have since expanded through practical projects, continuous learning,
+                        and hands-on development of intelligent applications that integrate data, automation, and
+                        adaptive decision-making.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">My Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Full-Stack Development</h3>
+                    <p>Building responsive, scalable web applications using modern technologies like React, Node.js, and
+                        Python with a focus on performance and user experience.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Solutions</h3>
+                    <p>Developing intelligent systems using machine learning, natural language processing, and computer
+                        vision to solve complex real-world problems.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Development</h3>
+                    <p>Creating cross-platform mobile applications using React Native and Capacitor that provide
+                        seamless experiences across iOS and Android.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Accra, Ghana</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>cephas.oseibonsu@example.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+233 XX XXX XXXX</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <p>linkedin.com/in/cephas-oseibonsu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="reply_to" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="title" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" placeholder="Your Message" rows="5"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                    <p id="statusMessage" style="display: none;"></p>
+                </div>
+            </div>
+    </section>
+
+    <!-- New Areas of Focus Section with Image Gallery -->
+    <section class="focus-section">
+        <div class="container focus-content">
+            <h2 class="section-title">Areas of Focus</h2>
+            <div class="focus-gallery">
+                <div class="focus-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Artificial Intelligence" class="focus-image">
+                    <div class="focus-content-inner">
+                        <div class="focus-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Artificial Intelligence</h3>
+                        <p>Developing intelligent systems that learn, adapt, and solve complex problems with human-like
+                            reasoning capabilities.</p>
+                    </div>
+                </div>
+
+                <div class="focus-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Automation" class="focus-image">
+                    <div class="focus-content-inner">
+                        <div class="focus-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Automation</h3>
+                        <p>Creating systems that streamline processes, reduce manual intervention, and increase
+                            efficiency across various domains.</p>
+                    </div>
+                </div>
+
+                <div class="focus-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Software Development" class="focus-image">
+                    <div class="focus-content-inner">
+                        <div class="focus-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Software Development</h3>
+                        <p>Building robust, scalable applications using modern technologies and best practices for
+                            optimal performance.</p>
+                    </div>
+                </div>
+
+                <div class="focus-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+                        alt="Innovation" class="focus-image">
+                    <div class="focus-content-inner">
+                        <div class="focus-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Innovation</h3>
+                        <p>Pushing boundaries with creative solutions that transform industries and improve lives
+                            through technology.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><span class="logo-blue">Cephas</span> Portfolio</div>
+                <div class="footer-links">
+                    <a href="#home" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#skills" class="footer-link">Skills</a>
+                    <a href="#portfolio" class="footer-link">Portfolio</a>
+                    <a href="#certifications" class="footer-link">Certifications</a>
+                    <a href="#services" class="footer-link">Services</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+                <div class="socials">
+                    <a href="#" class="social"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social"><i class="fab fa-medium"></i></a>
+                </div>
+                <p class="copyright">© 2023 Cephas Osei-Bonsu. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- EmailJS Integration -->
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/email.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+
+</html>
