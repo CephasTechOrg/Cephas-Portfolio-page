@@ -3,50 +3,74 @@
 // Project data for modals
 const projects = {
     1: {
-        title: "AI-Powered Education Platform",
-        image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-        description: "An intelligent learning platform that adapts to student needs using machine learning algorithms. The system analyzes learning patterns and customizes content delivery to optimize knowledge retention. Features include personalized learning paths, interactive assessments, and real-time progress tracking. This project demonstrates my ability to integrate AI technologies with user-centered design to create impactful educational tools.",
-        technologies: ["Python", "TensorFlow", "React", "Node.js", "MongoDB"],
+        title: "Vital-Go",
+        image: "https://img.freepik.com/premium-photo/medicine-doctor-working-with-digital-medical-interface-icons-hospital-background-healthcare-medical-technology-network-concept_265022-20251.jpg",
+        description: "Vital-Go is a production-ready health platform that streams live vitals from wearables, layers AI-driven risk scoring, and lets doctors collaborate in real time through dashboards and video consults. It unifies patient timelines, alerts, and triage workflows so clinical teams can intervene before emergencies happen.",
+        technologies: ["Python", "FastAPI", "PostgreSQL", "WebSockets", "AI Risk Engines", "WebRTC", "React"],
         demoLink: "#",
         codeLink: "#"
     },
     2: {
-        title: "Healthcare Analytics Dashboard",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-        description: "A comprehensive dashboard for healthcare providers to analyze patient data and predict health trends. The system processes large datasets to identify patterns and provide actionable insights. It includes features for patient monitoring, treatment effectiveness analysis, and predictive modeling for disease outbreaks. This project showcases my skills in data visualization, machine learning, and creating user-friendly interfaces for complex data.",
-        technologies: ["Python", "FastAPI", "React", "D3.js", "PostgreSQL"],
+        title: "PedraX",
+        image: "assets/images/pderax.png",
+        description: "PedraX accepts PDFs, Word documents, or spreadsheets, extracts their contents with a FastAPI processing pipeline, and routes the text to AI models for summarization, question generation, and branded exports. Users receive downloadable PDF, DOCX, or TXT reports complete with custom logos and comprehension checks.",
+        technologies: ["Python", "FastAPI", "OpenAI API", "PDF Processing", "PostgreSQL", "AWS S3", "Vue.js"],
         demoLink: "#",
         codeLink: "#"
     },
     3: {
-        title: "Community Resource Finder",
-        image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-        description: "A platform connecting underserved communities with local resources and support services. The application uses geolocation to help users find food banks, healthcare services, educational programs, and employment assistance in their area. It includes features for service providers to update their information and for users to leave reviews. This project reflects my commitment to using technology for social good and creating accessible solutions.",
-        technologies: ["React", "Node.js", "Google Maps API", "Firebase", "Capacitor"],
+        title: "Resume Job Match Evaluator",
+        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
+        description: "The Resume Job Match Evaluator compares a candidate's resume against job, scholarship, or academic program descriptions pulled from the backend. It computes fit scores, visualizes strengths versus gaps, generates improvement prompts, and produces printable reports so applicants can take action quickly.",
+        technologies: ["Python", "FastAPI", "React", "D3.js", "NLP Models", "Redis", "Tailwind CSS"],
         demoLink: "#",
         codeLink: "#"
     },
     4: {
-        title: "E-commerce Analytics Platform",
-        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-        description: "An analytics platform for e-commerce businesses to track performance and customer behavior. The system provides insights on sales trends, customer segmentation, and product performance. Features include interactive dashboards, automated reporting, and predictive analytics for inventory management. This project demonstrates my ability to create data-driven solutions that help businesses make informed decisions.",
-        technologies: ["React", "Node.js", "Python", "Chart.js", "PostgreSQL"],
+        title: "Healthcare RAG System",
+        image: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=900&q=80",
+        description: "A Retriever Augmented Generation stack trained on medical guidelines, case studies, and research papers to deliver grounded, explainable responses to clinicians. It orchestrates embeddings, vector search, and FastAPI microservices so health teams can query trustworthy insights with proper citations.",
+        technologies: ["Python", "FastAPI", "LangChain", "Vector Databases", "Pinecone", "Docker", "Azure"],
         demoLink: "#",
         codeLink: "#"
     },
     5: {
-        title: "Financial Planning App",
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-        description: "A mobile application that helps users manage their finances and plan for the future. The app includes features for budget tracking, expense categorization, savings goals, and investment tracking. It uses machine learning to provide personalized financial advice and spending insights. This project showcases my skills in mobile development and financial technology.",
-        technologies: ["React Native", "Node.js", "Firebase", "TensorFlow", "Plaid API"],
+        title: "Smart Budget Pro",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
+        description: "Smart Budget Pro helps thousands of users control their finances from a published mobile app. It tracks day-to-day spend, income streams, saving goals, and automatically renders charts so people understand where money goes each day, week, month, or year.",
+        technologies: ["Flutter", "Dart", "Firebase", "REST APIs", "PostgreSQL", "RevenueCat"],
         demoLink: "#",
         codeLink: "#"
     },
     6: {
-        title: "IoT Home Automation",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-        description: "A smart home system that allows users to control their home devices remotely. The system integrates with various IoT devices including lights, thermostats, and security cameras. Features include voice control, automation rules, and energy usage monitoring. This project demonstrates my ability to work with embedded systems and IoT technologies.",
-        technologies: ["Arduino", "C++", "React Native", "Node.js", "MQTT"],
+        title: "MTN Data Automation",
+        image: "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=900&q=80",
+        description: "An MTN bundle marketplace with user and admin portals. Customers purchase data bundles, complete payments, and the system routes confirmations to admins who approve and trigger automated bundle provisioning. Audit trails keep every request traceable end-to-end.",
+        technologies: ["Python", "FastAPI", "PostgreSQL", "Flutter Web", "Paystack API", "Celery", "Redis"],
+        demoLink: "#",
+        codeLink: "#"
+    },
+    7: {
+        title: "Chrome Extension Builder",
+        image: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=900&q=80",
+        description: "A Node.js service that powers a Chrome extension infused with DeepSeek AI. Users can highlight text in any tab, fire prompts, and receive contextual answers, drafts, or code snippets without leaving the browser.",
+        technologies: ["Node.js", "Express", "Chrome APIs", "DeepSeek API", "TypeScript", "WebSockets"],
+        demoLink: "#",
+        codeLink: "#"
+    },
+    8: {
+        title: "OpenAI Website Builder",
+        image: "https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=900&q=80",
+        description: "A TypeScript-driven studio where founders select a site type, fill prompt placeholders, and let the AI agent craft full HTML/CSS/JS templates. Users preview results instantly, then download or publish to Netlify straight from the interface.",
+        technologies: ["TypeScript", "Node.js", "Next.js", "Tailwind CSS", "OpenAI API", "Prisma"],
+        demoLink: "#",
+        codeLink: "#"
+    },
+    9: {
+        title: "Church Management System",
+        image: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=900&q=80",
+        description: "A secure system for churches to register members, ministries, giving history, and attendance. Detailed search, exports, and role-based dashboards help leadership keep data centralized, auditable, and accessible anytime.",
+        technologies: ["Python", "FastAPI", "React", "PostgreSQL", "Azure Blob Storage", "JWT Auth"],
         demoLink: "#",
         codeLink: "#"
     }
@@ -292,3 +316,70 @@ document.querySelectorAll('.btn.hire').forEach(button => {
         document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
     });
 });
+
+// Back to Top Button
+const createBackToTopButton = () => {
+    const button = document.createElement('button');
+    button.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    button.className = 'back-to-top';
+    button.setAttribute('aria-label', 'Back to top');
+    button.style.cssText = `
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        color: #00202b;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        z-index: 999;
+        box-shadow: 0 4px 15px rgba(16, 183, 255, 0.3);
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+    `;
+
+    button.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    button.addEventListener('mouseenter', () => {
+        button.style.transform = 'translateY(-5px)';
+        button.style.boxShadow = '0 6px 20px rgba(16, 183, 255, 0.4)';
+    });
+
+    button.addEventListener('mouseleave', () => {
+        button.style.transform = 'translateY(0)';
+        button.style.boxShadow = '0 4px 15px rgba(16, 183, 255, 0.3)';
+    });
+
+    document.body.appendChild(button);
+
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            button.style.display = 'flex';
+            setTimeout(() => {
+                button.style.opacity = '1';
+                button.style.transform = 'translateY(0)';
+            }, 10);
+        } else {
+            button.style.opacity = '0';
+            button.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                if (window.scrollY <= 300) {
+                    button.style.display = 'none';
+                }
+            }, 300);
+        }
+    });
+};
+
+// Initialize back to top button
+document.addEventListener('DOMContentLoaded', createBackToTopButton);
