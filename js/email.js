@@ -199,6 +199,12 @@ document.addEventListener('DOMContentLoaded', function () {
     contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
+        const honeypot = document.getElementById('website')?.value.trim();
+        if (honeypot) {
+            console.warn('Submission blocked by honeypot field.');
+            return;
+        }
+
         const formData = {
             from_name: document.querySelector('input[name="name"]')?.value.trim() || '',
             from_email: document.querySelector('input[name="reply_to"]')?.value.trim() || '',

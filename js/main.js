@@ -119,6 +119,7 @@ function toggleMobileNav() {
     // Toggle classes
     mobileNav.classList.toggle('active');
     mobileNavOverlay.classList.toggle('active');
+    mobileNavToggle.setAttribute('aria-expanded', (!isActive).toString());
 
     // Prevent multiple rapid clicks
     mobileNavToggle.style.pointerEvents = 'none';
@@ -268,6 +269,7 @@ document.querySelectorAll('.view-details').forEach(button => {
 
             modal.style.display = 'block';
             document.body.style.overflow = 'hidden';
+            closeModal.focus();
         }
     });
 });
@@ -286,12 +288,19 @@ window.addEventListener('click', function (e) {
     }
 });
 
+// Close modal with Escape key
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'block') {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
 // Download CV functionality
 document.querySelectorAll('.download, .mobile-download').forEach(button => {
     button.addEventListener('click', function (e) {
         e.preventDefault();
-        // Replace with the actual path to your CV file
-        const cvUrl = 'path/to/your/cv.pdf';
+        const cvUrl = 'resume/Cephas.pdf';
 
         // Create a temporary anchor element to trigger download
         const link = document.createElement('a');
