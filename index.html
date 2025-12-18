@@ -74,6 +74,9 @@
 
 <body>
     <a class="skip-to-content" href="#home">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true">
+        <div class="scroll-progress__bar" id="scrollProgressBar"></div>
+    </div>
     <header class="site-header" id="siteHeader">
         <div class="container header-inner">
             <div class="logo"><span class="logo-blue">Cephas</span> Portfolio</div>
@@ -794,6 +797,22 @@
             </div>
         </div>
     </footer>
+
+    <!-- Assistive tools -->
+    <button class="assistive-toggle" id="assistiveToggle" aria-expanded="false" aria-controls="assistivePanel" aria-label="Open accessibility tools">
+        <i class="fas fa-universal-access"></i>
+    </button>
+    <div class="assistive-panel" id="assistivePanel" role="dialog" aria-modal="false" aria-label="Accessibility tools">
+        <p class="assistive-title">Accessibility</p>
+        <div class="assistive-actions">
+            <button type="button" class="assistive-btn" id="increaseText" aria-label="Increase text size">A+</button>
+            <button type="button" class="assistive-btn" id="decreaseText" aria-label="Decrease text size">A-</button>
+            <button type="button" class="assistive-btn" id="resetText" aria-label="Reset text size">Reset</button>
+            <button type="button" class="assistive-btn" id="toggleContrast" aria-label="Toggle high contrast">Contrast</button>
+            <button type="button" class="assistive-btn" id="toggleMotion" aria-label="Toggle reduced motion">Reduce Motion</button>
+        </div>
+        <p class="assistive-note">Settings persist on this device.</p>
+    </div>
 
     <!-- EmailJS Integration -->
     <!-- EmailJS SDK -->

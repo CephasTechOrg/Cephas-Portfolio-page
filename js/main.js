@@ -137,6 +137,7 @@ mobileNavLinks.forEach(link => {
         mobileNav.classList.remove('active');
         mobileNavOverlay.classList.remove('active');
         document.body.style.overflow = 'auto';
+        mobileNavToggle.setAttribute('aria-expanded', 'false');
     });
 });
 
@@ -207,10 +208,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     checkVisibility();
+    initScrollAnimations();
+    initAssistiveTools();
 });
 
 // Animation on scroll
 function checkVisibility() {
+    if (window.__animObserverInitialized) return;
     const elements = document.querySelectorAll('.fade-in');
 
     elements.forEach(element => {
@@ -222,6 +226,32 @@ function checkVisibility() {
             element.classList.add('visible');
         }
     });
+}
+
+function initScrollAnimations() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const elements = document.querySelectorAll('.fade-in');
+    if (!elements.length) return;
+
+    if (prefersReducedMotion) {
+        elements.forEach(el => el.classList.add('visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    elements.forEach(el => observer.observe(el));
+    window.__animObserverInitialized = true;
 }
 
 // Project modal functionality
@@ -392,3 +422,74 @@ const createBackToTopButton = () => {
 
 // Initialize back to top button
 document.addEventListener('DOMContentLoaded', createBackToTopButton);
+
+// Scroll progress indicator
+const progressBar = document.getElementById('scrollProgressBar');
+if (progressBar) {
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+    });
+}
+
+// Assistive tools
+function initAssistiveTools() {
+    const toggle = document.getElementById('assistiveToggle');
+    const panel = document.getElementById('assistivePanel');
+    if (!toggle || !panel) return;
+
+    const increaseText = document.getElementById('increaseText');
+    const decreaseText = document.getElementById('decreaseText');
+    const resetText = document.getElementById('resetText');
+    const toggleContrast = document.getElementById('toggleContrast');
+    const toggleMotion = document.getElementById('toggleMotion');
+    const body = document.body;
+    const state = {
+        fontScale: parseFloat(localStorage.getItem('assistiveFontScale')) || 1,
+        contrast: localStorage.getItem('assistiveContrast') === '1',
+        reduceMotion: localStorage.getItem('assistiveMotion') === '1'
+    };
+
+    const applyState = () => {
+        body.style.fontSize = `${16 * state.fontScale}px`;
+        body.classList.toggle('high-contrast', state.contrast);
+        body.classList.toggle('reduce-motion', state.reduceMotion);
+    };
+
+    const persist = () => {
+        localStorage.setItem('assistiveFontScale', state.fontScale);
+        localStorage.setItem('assistiveContrast', state.contrast ? '1' : '0');
+        localStorage.setItem('assistiveMotion', state.reduceMotion ? '1' : '0');
+    };
+
+    applyState();
+
+    toggle.addEventListener('click', () => {
+        const isOpen = panel.classList.toggle('active');
+        toggle.setAttribute('aria-expanded', isOpen.toString());
+    });
+
+    const adjustFont = (delta) => {
+        state.fontScale = Math.min(1.4, Math.max(0.85, +(state.fontScale + delta).toFixed(2)));
+        applyState();
+        persist();
+    };
+
+    increaseText?.addEventListener('click', () => adjustFont(0.05));
+    decreaseText?.addEventListener('click', () => adjustFont(-0.05));
+    resetText?.addEventListener('click', () => { state.fontScale = 1; applyState(); persist(); });
+
+    toggleContrast?.addEventListener('click', () => {
+        state.contrast = !state.contrast;
+        applyState();
+        persist();
+    });
+
+    toggleMotion?.addEventListener('click', () => {
+        state.reduceMotion = !state.reduceMotion;
+        applyState();
+        persist();
+    });
+}
