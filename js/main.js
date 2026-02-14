@@ -44,7 +44,7 @@ const projects = {
     },
     6: {
         title: "MTN Data Automation",
-        image: "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=900&q=80",
+        image: "assets/images/MTN.jpg",
         description: "An MTN bundle marketplace with user and admin portals. Customers purchase data bundles, complete payments, and the system routes confirmations to admins who approve and trigger automated bundle provisioning. Audit trails keep every request traceable end-to-end.",
         technologies: ["Python", "FastAPI", "PostgreSQL", "Flutter Web", "Paystack API", "Celery", "Redis"],
         demoLink: "#",
