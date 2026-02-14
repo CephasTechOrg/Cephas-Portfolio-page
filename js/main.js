@@ -141,7 +141,7 @@ mobileNavLinks.forEach(link => {
     });
 });
 
-// Smooth scrolling for navigation links
+// Smooth scrolling for navigation links with enhanced easing
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -151,12 +151,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             const headerHeight = document.querySelector('.site-header').offsetHeight;
-            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
 
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
             });
+            
+            // Add a subtle flash effect to the target section
+            targetElement.style.transition = 'background-color 0.6s ease';
+            const originalBg = targetElement.style.backgroundColor;
+            targetElement.style.backgroundColor = 'rgba(16, 183, 255, 0.05)';
+            setTimeout(() => {
+                targetElement.style.backgroundColor = originalBg;
+            }, 600);
         }
     });
 });

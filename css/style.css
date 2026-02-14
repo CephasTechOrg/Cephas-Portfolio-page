@@ -56,8 +56,7 @@ button:focus-visible {
 html,
 body {
     height: 100%;
-    /* Remove smooth scroll for mobile stability */
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -431,10 +430,11 @@ body {
     border-radius: 8px;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background-size: 200% 100%;
     position: relative;
     overflow: hidden;
+    text-decoration: none;
 }
 
 .btn.hire {
@@ -444,9 +444,14 @@ body {
 }
 
 .btn.hire:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 40px rgba(6, 168, 240, 0.25);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 18px 45px rgba(6, 168, 240, 0.35);
     background-position: 100% 0;
+}
+
+.btn.hire:active {
+    transform: translateY(-2px) scale(1);
+    transition: all 0.1s ease;
 }
 
 .btn.outline {
@@ -455,13 +460,39 @@ body {
     color: var(--white);
     padding: 10px 20px;
     outline-offset: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn.outline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(16, 183, 255, 0.12);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: -1;
+}
+
+.btn.outline:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
 .btn.outline:hover {
     background: rgba(16, 183, 255, 0.08);
-    border-color: rgba(16, 183, 255, 0.3);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 22px rgba(16, 183, 255, 0.18);
+    border-color: rgba(16, 183, 255, 0.4);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 28px rgba(16, 183, 255, 0.25);
+}
+
+.btn.outline:active {
+    transform: translateY(-2px) scale(1);
+    transition: all 0.1s ease;
 }
 
 /* Stats section */
@@ -603,21 +634,28 @@ section {
     border-radius: 15px;
     padding: 25px 20px;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
 .skill-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(16, 183, 255, 0.1);
-    border-color: rgba(16, 183, 255, 0.2);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(16, 183, 255, 0.15);
+    border-color: rgba(16, 183, 255, 0.3);
+    background: rgba(16, 183, 255, 0.08);
+}
+
+.skill-item:hover .skill-icon {
+    transform: scale(1.15) rotate(5deg);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skill-icon {
     font-size: 36px;
     color: var(--accent);
     margin-bottom: 15px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skill-name {
@@ -640,7 +678,9 @@ section {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.06);
     transform: translateY(0);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s ease;
 }
 
 .portfolio-image {
@@ -648,7 +688,7 @@ section {
     height: 250px;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-overlay {
@@ -659,7 +699,7 @@ section {
     background: linear-gradient(transparent, rgba(7, 24, 39, 0.95));
     padding: 30px 25px 25px;
     transform: translateY(70px);
-    transition: all 0.4s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-item:hover .portfolio-overlay {
@@ -671,8 +711,9 @@ section {
 }
 
 .portfolio-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 20px 50px rgba(16, 183, 255, 0.15), 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(16, 183, 255, 0.2);
 }
 
 .portfolio-title {
@@ -937,14 +978,14 @@ section {
     text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: blur(4px);
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(16, 183, 255, 0.15);
-    border-color: rgba(16, 183, 255, 0.2);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(16, 183, 255, 0.2);
+    border-color: rgba(16, 183, 255, 0.3);
     background: linear-gradient(160deg, rgba(16, 183, 255, 0.12), rgba(11, 42, 62, 0.5));
 }
 
@@ -1503,9 +1544,11 @@ textarea.form-control {
 /* Animation classes */
 .fade-in {
     opacity: 0;
-    transform: translateY(36px) scale(0.98);
-    transition: opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease;
-    filter: blur(4px);
+    transform: translateY(40px) scale(0.96);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                filter 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: blur(5px);
 }
 
 .fade-in.visible {
