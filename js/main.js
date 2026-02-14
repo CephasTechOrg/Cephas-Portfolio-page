@@ -10,7 +10,15 @@ const projects = {
         demoLink: "#",
         codeLink: "#"
     },
-    2: {
+    3: {
+        title: "Interview Prep AI",
+        image: "assets/images/interview.png",
+        description: "Interview Prep AI is a full-stack mock interview platform built with FastAPI and PostgreSQL that helps users practice for technical and behavioral interviews at top tech companies like Amazon, Apple, and Microsoft. The platform uses JWT authentication and an intelligent feedback system powered by RAG (Retrieval Augmented Generation) with embeddings to generate relevant follow-up questions from curated question banks covering software engineering and cybersecurity roles.",
+        technologies: ["Python", "FastAPI", "PostgreSQL", "RAG", "LLMs", "JWT Auth", "Vector Embeddings", "React"],
+        demoLink: "#",
+        codeLink: "#"
+    },
+    3: {
         title: "PedraX",
         image: "assets/images/pderax.png",
         description: "PedraX accepts PDFs, Word documents, or spreadsheets, extracts their contents with a FastAPI processing pipeline, and routes the text to AI models for summarization, question generation, and branded exports. Users receive downloadable PDF, DOCX, or TXT reports complete with custom logos and comprehension checks.",
@@ -18,7 +26,7 @@ const projects = {
         demoLink: "#",
         codeLink: "#"
     },
-    3: {
+    4: {
         title: "Resume Job Match Evaluator",
         image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
         description: "The Resume Job Match Evaluator compares a candidate's resume against job, scholarship, or academic program descriptions pulled from the backend. It computes fit scores, visualizes strengths versus gaps, generates improvement prompts, and produces printable reports so applicants can take action quickly.",
@@ -26,7 +34,7 @@ const projects = {
         demoLink: "#",
         codeLink: "#"
     },
-    4: {
+    5: {
         title: "TinyChatGPT",
         image: "assets/images/uai.jpg",
         description: "TinyChatGPT is a from-scratch, decoder-only Transformer (GPT-style) chatbot project built to learn the full training pipeline end-to-end. It starts small on CPU (laptop-friendly) and scales to GPU/cloud later using the same architecture and codebase.",
@@ -34,7 +42,7 @@ const projects = {
         demoLink: "#",
         codeLink: "#"
     },
-    5: {
+    6: {
         title: "Smart Budget Pro",
         image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
         description: "Smart Budget Pro helps thousands of users control their finances from a published mobile app. It tracks day-to-day spend, income streams, saving goals, and automatically renders charts so people understand where money goes each day, week, month, or year.",
@@ -42,7 +50,7 @@ const projects = {
         demoLink: "#",
         codeLink: "#"
     },
-    6: {
+    7: {
         title: "MTN Data Automation",
         image: "assets/images/MTN.jpg",
         description: "An MTN bundle marketplace with user and admin portals. Customers purchase data bundles, complete payments, and the system routes confirmations to admins who approve and trigger automated bundle provisioning. Audit trails keep every request traceable end-to-end.",
@@ -50,7 +58,7 @@ const projects = {
         demoLink: "#",
         codeLink: "#"
     },
-    7: {
+    8: {
         title: "Chrome Extension Builder",
         image: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=900&q=80",
         description: "A Node.js service that powers a Chrome extension infused with DeepSeek AI. Users can highlight text in any tab, fire prompts, and receive contextual answers, drafts, or code snippets without leaving the browser.",
@@ -58,7 +66,7 @@ const projects = {
         demoLink: "#",
         codeLink: "#"
     },
-    8: {
+    9: {
         title: "OpenAI Website Builder",
         image: "https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=900&q=80",
         description: "A TypeScript-driven studio where founders select a site type, fill prompt placeholders, and let the AI agent craft full HTML/CSS/JS templates. Users preview results instantly, then download or publish to Netlify straight from the interface.",
