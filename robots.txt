@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Sitemap: https://cephasportfolio.innovatex.ink/sitemap.xml
+
+# Allow all search engines to crawl everything
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Crawl delay (optional)
+Crawl-delay: 0
