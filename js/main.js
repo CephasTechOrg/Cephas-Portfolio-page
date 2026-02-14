@@ -10,7 +10,7 @@ const projects = {
         demoLink: "#",
         codeLink: "#"
     },
-    3: {
+    2: {
         title: "Interview Prep AI",
         image: "assets/images/interview.png",
         description: "Interview Prep AI is a full-stack mock interview platform built with FastAPI and PostgreSQL that helps users practice for technical and behavioral interviews at top tech companies like Amazon, Apple, and Microsoft. The platform uses JWT authentication and an intelligent feedback system powered by RAG (Retrieval Augmented Generation) with embeddings to generate relevant follow-up questions from curated question banks covering software engineering and cybersecurity roles.",
