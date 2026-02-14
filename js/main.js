@@ -28,7 +28,7 @@ const projects = {
     },
     4: {
         title: "Healthcare RAG System",
-        image: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=900&q=80",
+        image: "assets/images/uai.jpg",
         description: "A Retriever Augmented Generation stack trained on medical guidelines, case studies, and research papers to deliver grounded, explainable responses to clinicians. It orchestrates embeddings, vector search, and FastAPI microservices so health teams can query trustworthy insights with proper citations.",
         technologies: ["Python", "FastAPI", "LangChain", "Vector Databases", "Pinecone", "Docker", "Azure"],
         demoLink: "#",
@@ -63,14 +63,6 @@ const projects = {
         image: "https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=900&q=80",
         description: "A TypeScript-driven studio where founders select a site type, fill prompt placeholders, and let the AI agent craft full HTML/CSS/JS templates. Users preview results instantly, then download or publish to Netlify straight from the interface.",
         technologies: ["TypeScript", "Node.js", "Next.js", "Tailwind CSS", "OpenAI API", "Prisma"],
-        demoLink: "#",
-        codeLink: "#"
-    },
-    9: {
-        title: "Church Management System",
-        image: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=900&q=80",
-        description: "A secure system for churches to register members, ministries, giving history, and attendance. Detailed search, exports, and role-based dashboards help leadership keep data centralized, auditable, and accessible anytime.",
-        technologies: ["Python", "FastAPI", "React", "PostgreSQL", "Azure Blob Storage", "JWT Auth"],
         demoLink: "#",
         codeLink: "#"
     }
