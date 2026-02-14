@@ -27,10 +27,10 @@ const projects = {
         codeLink: "#"
     },
     4: {
-        title: "Healthcare RAG System",
+        title: "TinyChatGPT",
         image: "assets/images/uai.jpg",
-        description: "A Retriever Augmented Generation stack trained on medical guidelines, case studies, and research papers to deliver grounded, explainable responses to clinicians. It orchestrates embeddings, vector search, and FastAPI microservices so health teams can query trustworthy insights with proper citations.",
-        technologies: ["Python", "FastAPI", "LangChain", "Vector Databases", "Pinecone", "Docker", "Azure"],
+        description: "TinyChatGPT is a from-scratch, decoder-only Transformer (GPT-style) chatbot project built to learn the full training pipeline end-to-end. It starts small on CPU (laptop-friendly) and scales to GPU/cloud later using the same architecture and codebase.",
+        technologies: ["Python", "PyTorch", "Transformers", "NumPy", "CUDA", "Deep Learning", "NLP"],
         demoLink: "#",
         codeLink: "#"
     },
