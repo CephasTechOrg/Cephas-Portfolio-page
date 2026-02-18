@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://cephasportfolio.innovatex.ink/sitemap.xml
+Sitemap: https://cephastech.com/sitemap.xml
 
 # Allow all search engines to crawl everything
 User-agent: Googlebot
