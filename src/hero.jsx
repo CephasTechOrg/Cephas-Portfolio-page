@@ -91,13 +91,6 @@ const Hero = () => {
             >
               LinkedIn <ArrowUR />
             </a>
-            <a
-              href={window.CEPHAS_DATA.links.resume}
-              target="_blank" rel="noopener noreferrer"
-              className="btn" aria-label="Download Cephas's resume PDF"
-            >
-              Download Resume <ArrowDown />
-            </a>
           </div>
 
           <div className="hero-stats reveal" style={{ ['--reveal-delay']: '640ms' }}>

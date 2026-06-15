@@ -26,14 +26,6 @@ const Contact = () => {
           >
             {links.email} <ArrowUR />
           </a>
-          <a
-            className="btn"
-            href={links.resume}
-            target="_blank" rel="noopener noreferrer"
-            aria-label="Download resume (PDF)"
-          >
-            Download Resume <ArrowDown />
-          </a>
         </div>
 
         <div className="contact-channels reveal" style={{ ['--reveal-delay']: '480ms' }}>
@@ -64,12 +56,12 @@ const Contact = () => {
           <a
             className="channel reveal from-br"
             style={{ ['--reveal-delay']: '300ms' }}
-            href={links.resume}
+            href={links.github}
             target="_blank" rel="noopener noreferrer"
-            aria-label="Resume PDF"
+            aria-label="GitHub profile"
           >
-            <span className="l">Resume</span>
-            <span className="v">PDF · 1.0 MB <ArrowDown /></span>
+            <span className="l">GitHub</span>
+            <span className="v">CephasTechOrg <ArrowUR /></span>
           </a>
         </div>
       </div>
@@ -105,7 +97,6 @@ const Footer = () => {
             <a href={"mailto:" + links.email}>Email</a>
             <a href={links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
             <a href={links.github}   target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-            <a href={links.resume}   target="_blank" rel="noopener noreferrer">Resume PDF ↓</a>
           </div>
 
           <div className="footer-col">

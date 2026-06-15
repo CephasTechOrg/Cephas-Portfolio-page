@@ -6,7 +6,6 @@ const links = {
   email:     "cephas.bonsuosei@gmail.com",
   linkedin:  "https://www.linkedin.com/in/cephas-osei-bonsu-911731326/",
   github:    "https://github.com/CephasTechOrg",
-  resume:    "public/resume/Cephas_Osei_Bonsu_Resume.pdf",
 };
 
 const skillsRow1 = [

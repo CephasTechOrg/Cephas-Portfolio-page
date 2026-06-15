@@ -54,16 +54,6 @@ const Nav = () => {
           ))}
         </div>
 
-        <a
-          className="nav-cta"
-          href={window.CEPHAS_DATA.links.resume}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Download Cephas's resume (PDF)"
-        >
-          Resume <ArrowDown />
-        </a>
-
         <button
           className="nav-toggle"
           onClick={() => setOpen(true)}
@@ -84,15 +74,6 @@ const Nav = () => {
             <span className="idx">0{i + 1}</span>
           </a>
         ))}
-        <a
-          href={window.CEPHAS_DATA.links.resume}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => setOpen(false)}
-        >
-          Download Resume
-          <span className="idx">PDF</span>
-        </a>
       </div>
     </>
   );
