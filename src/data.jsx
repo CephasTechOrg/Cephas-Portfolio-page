@@ -54,13 +54,13 @@ const projects = [
   {
     id: 2,
     title: "Interview Prep AI",
-    primaryUrl: "https://interviq-frontend.onrender.com",
+    primaryUrl: "https://www.orrai.app",
     tagline: "AI-powered interview preparation for SWE, PM, cybersecurity, internships, and tech opportunities.",
     stack: ["FastAPI", "Next.js", "PostgreSQL", "AI APIs"],
     highlight: "Built for hundreds of users with realistic interview flows, role-aware follow-ups, scoring, and feedback.",
     year: "2025",
     links: [
-      { label: "Website", url: "https://interviq-frontend.onrender.com",                    kind: "site"   },
+      { label: "Website", url: "https://www.orrai.app",                                      kind: "site"   },
       { label: "GitHub",  url: "https://github.com/CephasTechOrg/INTERVIEWPREP-APP",        kind: "github" },
     ],
   },
