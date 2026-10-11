@@ -175,8 +175,6 @@ const Hero = () => {
           </div>
 
           <div className="portrait-tags">
-            <span className="tag">Ghana-born</span>
-            <span className="tag">U.S.-based</span>
             <span className="tag">CS · Math · Livingstone College</span>
           </div>
         </div>
