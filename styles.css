@@ -310,7 +310,7 @@ img { display: block; max-width: 100%; }
 /* ------------------------------------------------------------------ */
 .hero {
   position: relative;
-  padding: clamp(140px, 18vh, 200px) 0 clamp(80px, 12vw, 140px);
+  padding: clamp(104px, 13vh, 136px) 0 clamp(80px, 12vw, 140px);
   overflow: hidden;
 }
 
@@ -357,45 +357,13 @@ img { display: block; max-width: 100%; }
   .hero-grid { grid-template-columns: 1fr; gap: 56px; }
 }
 
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 6px 12px 6px 8px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--text-2);
-  letter-spacing: 0.04em;
-}
-.hero-eyebrow .dot {
-  width: 7px; height: 7px;
-  border-radius: 999px;
-  background: #4ade80;
-  box-shadow: 0 0 8px rgba(74,222,128,0.6);
-  position: relative;
-}
-.hero-eyebrow .dot::after {
-  content: "";
-  position: absolute;
-  inset: -3px;
-  border-radius: 999px;
-  border: 1px solid rgba(74,222,128,0.5);
-  animation: pulse 2.4s ease-out infinite;
-}
-@keyframes pulse {
-  0%   { transform: scale(0.8); opacity: 0.9; }
-  100% { transform: scale(2.2); opacity: 0; }
-}
-
 .hero-name {
   font-family: var(--sans);
   font-weight: 400;
   font-size: clamp(46px, 9vw, 112px);
   letter-spacing: -0.045em;
   line-height: 0.95;
-  margin: 28px 0 0;
+  margin: 0;
   color: var(--text);
 }
 .hero-name .first { display: block; }

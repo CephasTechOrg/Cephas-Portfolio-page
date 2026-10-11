@@ -38,7 +38,7 @@ const skillGroups = [
       { name: "Node.js",    icon: "code" },
     ],
     proof: [
-      { slug: "vital-go",  note: "100+ endpoints · 4 Celery workers" },
+      { slug: "vital-go",  note: "500+ endpoints · 60+ API domains" },
       { slug: "sikaboafo", note: "50 endpoints · 13 modules" },
     ],
   },
@@ -101,7 +101,7 @@ const projects = [
     tagline: "AI-powered remote patient monitoring connecting wearables, doctors, and patients in real time.",
     stack: ["FastAPI", "Next.js", "PostgreSQL", "Redis", "Celery", "ESP32-C3", "Supabase"],
     metrics: [
-      { value: "100", unit: "+",  label: "API endpoints" },
+      { value: "500", unit: "+",  label: "API endpoints" },
       { value: "<2",  unit: "s",  label: "Device to dashboard" },
       { value: "7",   unit: "",   label: "Real users, 0 tickets" },
     ],
@@ -227,7 +227,7 @@ const experience = [
     body: "Leading product and engineering for an IoT remote patient monitoring platform.",
     bullets: [
       "Architected the platform end to end: ESP32-C3 devices, FastAPI/Postgres/Redis services, and Next.js dashboards.",
-      "8 API domains and 25+ production migrations.",
+      "60+ API domains and 25+ production migrations.",
       "Per-device JWT auth, secret rotation, and 20 req/min ingestion limits per device.",
     ],
   },

@@ -48,13 +48,6 @@ const Hero = () => {
 
       <div className="container hero-grid">
         <div className="hero-text">
-          <div className="reveal in">
-            <span className="hero-eyebrow">
-              <span className="dot" />
-              Available for engineering &amp; founder opportunities
-            </span>
-          </div>
-
           <h1 className="hero-name reveal" style={{ ['--reveal-delay']: '120ms' }}>
             <span className="first">Cephas</span>
             <span className="last">Osei-Bonsu.</span>
