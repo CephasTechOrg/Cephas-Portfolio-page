@@ -1,53 +1,66 @@
 /* ------------------------------------------------------------------ */
-/* Skills marquee                                                      */
+/* Skills — grouped by what they're used for, each backed by proof     */
 /* ------------------------------------------------------------------ */
 
-const SkillRow = ({ items, reverse, slow }) => {
-  const doubled = [...items, ...items];
-  return (
-    <div className={"marquee " + (reverse ? "reverse " : "") + (slow ? "slow" : "")}>
-      <div className="marquee-track">
-        {doubled.map((it, i) => (
-          <span key={i} className="skill-pill">
-            <span className="icon"><SkillIcon kind={it.icon} /></span>
-            {it.name}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-};
+const SkillPill = ({ skill }) => (
+  <span className="skill-pill">
+    <span className="icon"><SkillIcon kind={skill.icon} /></span>
+    {skill.name}
+  </span>
+);
 
 const Skills = () => {
-  const { skillsRow1, skillsRow2 } = window.CEPHAS_DATA;
-  // Row 3 = an interleaved subset to keep variety
-  const row3 = [
-    ...skillsRow1.filter((_,i) => i % 2 === 0),
-    ...skillsRow2.filter((_,i) => i % 2 === 1),
-  ];
+  const { languages, skillGroups, projects } = window.CEPHAS_DATA;
+  const titleOf = (slug) => (projects.find(p => p.slug === slug) || {}).title || slug;
+  const total = languages.length + skillGroups.reduce((n, g) => n + g.skills.length, 0);
 
   return (
-    <section className="skills" aria-label="Technical skills">
+    <section className="skills" id="skills" aria-label="Technical skills">
       <div className="container">
         <div className="skills-head">
           <div className="reveal">
             <span className="section-label">Stack · The toolbelt</span>
             <h2 className="section-title">
-              Languages, infrastructure, and AI tools I reach for to ship <em>reliable software</em>.
+              The tools I use to ship, and the projects that <em>prove it</em>.
             </h2>
           </div>
-          <span className="right reveal">20 / Production-tested</span>
+          <span className="right reveal">{total} tools · grouped by what I build with them</span>
         </div>
-      </div>
 
-      <div className="reveal">
-        <SkillRow items={skillsRow1} />
-      </div>
-      <div className="reveal" style={{ ['--reveal-delay']: '120ms' }}>
-        <SkillRow items={skillsRow2} reverse />
-      </div>
-      <div className="reveal" style={{ ['--reveal-delay']: '240ms' }}>
-        <SkillRow items={row3} slow />
+        <div className="skills-langs reveal">
+          <span className="skills-langs-label">Languages</span>
+          <div className="skills-pills">
+            {languages.map(s => <SkillPill key={s.name} skill={s} />)}
+          </div>
+        </div>
+
+        <div className="skills-grid">
+          {skillGroups.map((g, i) => (
+            <article
+              key={g.title}
+              className={"skill-card reveal " + (i % 2 ? "from-r" : "from-l")}
+              style={{ ['--reveal-delay']: (i * 80) + 'ms' }}
+            >
+              <div className="skill-card-head">
+                <span className="n">{String(i + 1).padStart(2, "0")} · {g.title}</span>
+                <span>{String(g.skills.length).padStart(2, "0")} tools</span>
+              </div>
+              <p className="skill-card-summary">{g.summary}</p>
+              <div className="skills-pills">
+                {g.skills.map(s => <SkillPill key={s.name} skill={s} />)}
+              </div>
+              <div className="skill-proof">
+                <span className="skill-proof-label">Proven in</span>
+                {g.proof.map(pr => (
+                  <a key={pr.slug} className="skill-proof-item" href={"#project-" + pr.slug}>
+                    <span className="t">{titleOf(pr.slug)}</span>
+                    <span className="d">{pr.note}</span>
+                  </a>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

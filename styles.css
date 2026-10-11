@@ -208,20 +208,6 @@ img { display: block; max-width: 100%; }
   box-shadow: inset 0 0 0 1px rgba(125,211,252,0.05), 0 0 24px -8px var(--accent-glow);
 }
 
-.nav-flags {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 9px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--text-3);
-  letter-spacing: 0.04em;
-}
-.nav-flags svg { display: block; border-radius: 2px; }
-
 .nav-links {
   display: flex;
   align-items: center;
@@ -685,7 +671,6 @@ img { display: block; max-width: 100%; }
   border-radius: 999px;
   background: rgba(255,255,255,0.015);
 }
-.portrait-tags .tag svg { width: 13px; height: 9px; }
 
 @media (max-width: 980px) {
   .portrait { max-width: 380px; }
@@ -734,7 +719,7 @@ img { display: block; max-width: 100%; }
 }
 
 /* ------------------------------------------------------------------ */
-/* Skills marquee                                                      */
+/* Skills                                                              */
 /* ------------------------------------------------------------------ */
 .skills {
   padding: clamp(60px, 8vw, 120px) 0;
@@ -761,42 +746,97 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.04em;
 }
 
-.marquee {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
-  padding: 14px 0;
-}
-.marquee-track {
+/* Skills: a languages strip, then one card per capability. Each card
+   ends with "Proven in" links that jump to the projects using it. */
+.skills-langs {
   display: flex;
-  gap: 14px;
-  width: max-content;
-  animation: marqueeL 60s linear infinite;
-  will-change: transform;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 18px 22px;
+  margin-bottom: 1px;
+  border: 1px solid var(--line);
+  border-radius: 14px 14px 0 0;
+  background: var(--bg);
 }
-.marquee.reverse .marquee-track { animation-name: marqueeR; }
-.marquee.slow .marquee-track    { animation-duration: 80s; }
-@keyframes marqueeL {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+.skills-langs-label,
+.skill-card-head,
+.skill-proof-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
 }
-@keyframes marqueeR {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
+.skills-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-top: 0;
+  border-radius: 0 0 14px 14px;
+  overflow: hidden;
 }
+@media (max-width: 880px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}
+.skill-card {
+  background: var(--bg);
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: background .3s;
+}
+.skill-card:hover { background: linear-gradient(160deg, rgba(125,211,252,0.05), transparent 55%), var(--bg); }
+.skill-card-head { display: flex; justify-content: space-between; gap: 12px; }
+.skill-card-head .n { color: var(--accent); }
+.skill-card-summary {
+  margin: 0;
+  font-size: clamp(17px, 1.6vw, 20px);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  text-wrap: pretty;
+}
+.skill-proof {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px 22px;
+}
+.skill-proof-label { flex-basis: 100%; }
+.skill-proof-item { display: inline-flex; flex-direction: column; gap: 2px; }
+.skill-proof-item .t {
+  font-size: 14px;
+  color: var(--text);
+  transition: color .2s;
+}
+.skill-proof-item .d {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  color: var(--text-3);
+}
+.skill-proof-item:hover .t { color: var(--accent); }
 
 .skill-pill {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 18px;
+  padding: 8px 14px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: rgba(255,255,255,0.015);
   font-family: var(--sans);
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-2);
   white-space: nowrap;
   transition: color .25s, border-color .25s, background .25s;
@@ -807,14 +847,13 @@ img { display: block; max-width: 100%; }
   background: rgba(125,211,252,0.06);
 }
 .skill-pill .icon {
-  width: 18px; height: 18px;
+  width: 16px; height: 16px;
   display: grid; place-items: center;
   color: var(--accent);
   opacity: 0.85;
 }
 .skill-pill .icon svg { width: 100%; height: 100%; }
 
-.marquee:hover .marquee-track { animation-play-state: paused; }
 
 /* ------------------------------------------------------------------ */
 /* Philosophy                                                          */
@@ -943,7 +982,7 @@ img { display: block; max-width: 100%; }
   text-transform: uppercase;
 }
 @media (max-width: 880px) {
-  .work-row.featured::after { position: relative; top: 0; right: 0; align-self: start; display: inline-flex; }
+  .work-row.featured::after { position: relative; top: 0; right: 0; align-self: start; justify-self: start; display: inline-flex; }
 }
 
 .work-title {
@@ -1007,6 +1046,57 @@ img { display: block; max-width: 100%; }
   border: 1px solid var(--line);
   border-radius: 6px;
   background: rgba(255,255,255,0.015);
+}
+
+/* Key numbers per project, styled like the hero stats. */
+.work-metrics {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 520px;
+}
+.work-metrics .m { display: flex; flex-direction: column; gap: 4px; }
+.work-metrics dd {
+  margin: 0;
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.work-metrics dd em {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--accent);
+}
+.work-metrics dt {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.work-more {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 4px 0;
+}
+.work-more-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-right: 8px;
+}
+.work-more-all { margin-left: auto; color: var(--text); }
+@media (max-width: 760px) {
+  .work-more-all { margin-left: 0; }
 }
 
 .work-highlight {

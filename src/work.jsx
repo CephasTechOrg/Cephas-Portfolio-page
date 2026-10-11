@@ -23,14 +23,14 @@ const WorkLinkIcon = ({ kind }) => {
 };
 
 const Work = () => {
-  const { projects } = window.CEPHAS_DATA;
+  const { projects, moreProjects, links } = window.CEPHAS_DATA;
   return (
     <section className="section" id="work" data-screen-label="03 Work">
       <div className="container">
         <div className="reveal">
-          <span className="section-label">Selected work · 2024 — 2026</span>
+          <span className="section-label">Selected work · 2025 — 2026</span>
           <h2 className="section-title">
-            Six projects sitting at the intersection of <em>AI, health, and real-time systems</em>.
+            {projects.length} projects at the intersection of <em>AI, health, and real-time systems</em>.
           </h2>
         </div>
 
@@ -40,11 +40,12 @@ const Work = () => {
             const dirClass = dirs[i % 2];
             return (
             <article
-              key={p.id}
+              key={p.slug}
+              id={"project-" + p.slug}
               className={"work-row reveal " + dirClass + " " + (p.featured ? "featured" : "")}
               style={{ ['--reveal-delay']: (i * 60) + 'ms' }}
             >
-              <div className="num">{String(p.id).padStart(2, "0")}</div>
+              <div className="num">{String(i + 1).padStart(2, "0")}</div>
 
               <div>
                 {p.primaryUrl ? (
@@ -84,6 +85,16 @@ const Work = () => {
               </div>
 
               <div className="work-meta">
+                {p.metrics && (
+                  <dl className="work-metrics">
+                    {p.metrics.map(m => (
+                      <div key={m.label} className="m">
+                        <dd>{m.value}{m.unit && <em>{m.unit}</em>}</dd>
+                        <dt>{m.label}</dt>
+                      </div>
+                    ))}
+                  </dl>
+                )}
                 <div className="stack-row">
                   {p.stack.map((t,idx) => <span key={idx} className="chip">{t}</span>)}
                 </div>
@@ -96,6 +107,18 @@ const Work = () => {
             </article>
             );
           })}
+        </div>
+
+        <div className="work-more reveal">
+          <span className="work-more-label">Also built</span>
+          {moreProjects.map(m => (
+            <a key={m.label} className="work-link" href={m.url} target="_blank" rel="noopener noreferrer">
+              {m.label} <WorkLinkIcon kind="github" />
+            </a>
+          ))}
+          <a className="work-link work-more-all" href={links.github} target="_blank" rel="noopener noreferrer">
+            All projects on GitHub <ArrowUR />
+          </a>
         </div>
       </div>
     </section>

@@ -56,12 +56,12 @@ const Contact = () => {
           <a
             className="channel reveal from-br"
             style={{ ['--reveal-delay']: '300ms' }}
-            href={links.github}
+            href={links.resume}
             target="_blank" rel="noopener noreferrer"
-            aria-label="GitHub profile"
+            aria-label="Resume (PDF)"
           >
-            <span className="l">GitHub</span>
-            <span className="v">CephasTechOrg <ArrowUR /></span>
+            <span className="l">Resume</span>
+            <span className="v">One-page PDF <ArrowUR /></span>
           </a>
         </div>
       </div>
@@ -78,9 +78,6 @@ const Footer = () => {
           <div className="footer-brand">
             <div className="n">Cephas Osei-Bonsu</div>
             <div className="r">Software Engineer · Founder @ Vital-Go</div>
-            <div className="r" style={{marginTop: '16px'}}>
-              <GHUSFlags />
-            </div>
           </div>
 
           <div className="footer-col">
@@ -88,7 +85,8 @@ const Footer = () => {
             <a href="#home">Home</a>
             <a href="#work">Work</a>
             <a href="#experience">Experience</a>
-            <a href="#spotlight">Spotlight</a>
+            <a href="#skills">Skills</a>
+            <a href="#recognition">Recognition</a>
             <a href="#contact">Contact</a>
           </div>
 
@@ -102,7 +100,7 @@ const Footer = () => {
           <div className="footer-col">
             <h5>Now</h5>
             <a href="#" style={{color:'var(--text-2)'}}>Building Vital-Go</a>
-            <a href="#" style={{color:'var(--text-2)'}}>Researching GPU scheduling</a>
+            <a href="#" style={{color:'var(--text-2)'}}>Growing Orra &amp; SikaBoafo</a>
             <a href="#" style={{color:'var(--text-2)'}}>Leading ColorStack @ LC</a>
           </div>
         </div>

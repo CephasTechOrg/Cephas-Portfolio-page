@@ -99,12 +99,12 @@ const Hero = () => {
               <div className="l">GPA · Pres. Scholar</div>
             </div>
             <div className="stat">
-              <div className="v"><em>1</em> Hackathon</div>
-              <div className="l">404 Sentinel · Winner</div>
+              <div className="v">1<em>st</em></div>
+              <div className="l">Hackathon winner</div>
             </div>
             <div className="stat">
               <div className="v">300<em>+</em></div>
-              <div className="l">Users shipped to</div>
+              <div className="l">Users on Orra</div>
             </div>
           </div>
         </div>
@@ -175,8 +175,8 @@ const Hero = () => {
           </div>
 
           <div className="portrait-tags">
-            <span className="tag"><FlagGH /> Ghana-born</span>
-            <span className="tag"><FlagUS /> U.S.-based</span>
+            <span className="tag">Ghana-born</span>
+            <span className="tag">U.S.-based</span>
             <span className="tag">CS · Math · Livingstone College</span>
           </div>
         </div>
