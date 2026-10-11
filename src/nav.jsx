@@ -4,9 +4,10 @@
 
 const NAV_ITEMS = [
   { id: "home",       label: "Home" },
+  { id: "skills",     label: "Skills" },
   { id: "work",       label: "Work" },
   { id: "experience", label: "Experience" },
-  { id: "spotlight",  label: "Spotlight" },
+  { id: "recognition", label: "Recognition" },
   { id: "contact",    label: "Contact" },
 ];
 
@@ -39,7 +40,6 @@ const Nav = () => {
         <a href="#home" className="nav-brand" aria-label="Cephas Osei-Bonsu — home">
           <span className="mark">C</span>
           <span>Cephas Osei-Bonsu</span>
-          <GHUSFlags />
         </a>
 
         <div className="nav-links" role="navigation">

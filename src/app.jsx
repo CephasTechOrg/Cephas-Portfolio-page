@@ -43,7 +43,7 @@ const App = () => {
       <Philosophy />
       <Work />
       <Experience />
-      <Spotlight />
+      <Recognition />
       <Contact />
       <Footer />
     </>

@@ -66,6 +66,36 @@ const SkillIcon = ({ kind }) => {
     case "heart": return (
       <svg viewBox="0 0 24 24" {...s}><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/><path d="M7 12h3l1-2 1 4 1-2h4"/></svg>
     );
+    case "code": return (
+      <svg viewBox="0 0 24 24" {...s}><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 5l-3 14"/></svg>
+    );
+    case "lock": return (
+      <svg viewBox="0 0 24 24" {...s}><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3M12 15v2"/></svg>
+    );
+    case "search": return (
+      <svg viewBox="0 0 24 24" {...s}><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5M8.5 11h5M11 8.5v5"/></svg>
+    );
+    case "vector": return (
+      <svg viewBox="0 0 24 24" {...s}><circle cx="5" cy="18" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="19" cy="15" r="1.6"/><path d="M6.2 16.8L10.8 7.4M13.4 7.2l4.6 6.6M6.6 17.6l10.8-2.2"/></svg>
+    );
+    case "scan": return (
+      <svg viewBox="0 0 24 24" {...s}><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3M8 9h8M8 12h8M8 15h5"/></svg>
+    );
+    case "flame": return (
+      <svg viewBox="0 0 24 24" {...s}><path d="M12 3c1 3 5 5 5 10a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 .3 1.5 1 2.5 2 3 0-3-.5-5.5.5-8z"/></svg>
+    );
+    case "layers": return (
+      <svg viewBox="0 0 24 24" {...s}><rect x="4" y="4" width="16" height="4" rx="1"/><rect x="4" y="10" width="16" height="4" rx="1"/><rect x="4" y="16" width="16" height="4" rx="1"/></svg>
+    );
+    case "mobile": return (
+      <svg viewBox="0 0 24 24" {...s}><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg>
+    );
+    case "cloud": return (
+      <svg viewBox="0 0 24 24" {...s}><path d="M7 18a4 4 0 0 1-.5-8A5.5 5.5 0 0 1 17 9a4.5 4.5 0 0 1 0 9z"/></svg>
+    );
+    case "card": return (
+      <svg viewBox="0 0 24 24" {...s}><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 15h3"/></svg>
+    );
     default: return null;
   }
 };
@@ -82,29 +112,4 @@ const ArrowDown = (p) => (
   </svg>
 );
 
-const FlagGH = (p) => (
-  <svg viewBox="0 0 18 12" width="18" height="12" {...p}>
-    <rect width="18" height="4" y="0" fill="#ce1126"/>
-    <rect width="18" height="4" y="4" fill="#fcd116"/>
-    <rect width="18" height="4" y="8" fill="#006b3f"/>
-    <path d="M9 6.4l-1.2.8.5-1.4-1.2-.9h1.5L9 3.5l.4 1.4h1.5l-1.2.9.5 1.4z" fill="#000"/>
-  </svg>
-);
-
-const FlagUS = (p) => (
-  <svg viewBox="0 0 18 12" width="18" height="12" {...p}>
-    <rect width="18" height="12" fill="#bf0a30"/>
-    {[1,3,5,7,9].map(y => <rect key={y} width="18" height="0.92" y={y} fill="#fff"/>)}
-    <rect width="8" height="6" fill="#002868"/>
-  </svg>
-);
-
-const GHUSFlags = () => (
-  <span className="nav-flags" title="Ghana-born · U.S.-based">
-    <FlagGH />
-    <FlagUS />
-    <span>GH&nbsp;→&nbsp;US</span>
-  </span>
-);
-
-Object.assign(window, { SkillIcon, ArrowUR, ArrowDown, FlagGH, FlagUS, GHUSFlags });
+Object.assign(window, { SkillIcon, ArrowUR, ArrowDown });

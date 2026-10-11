@@ -1,27 +1,26 @@
 /* ------------------------------------------------------------------ */
-/* Spotlight                                                           */
+/* Recognition — awards, scholarships, proof of work                  */
 /* ------------------------------------------------------------------ */
 
-const Spotlight = () => {
-  const { spotlight } = window.CEPHAS_DATA;
+const Recognition = () => {
+  const { recognition } = window.CEPHAS_DATA;
   return (
-    <section className="section" id="spotlight" data-screen-label="05 Spotlight">
+    <section className="section" id="recognition" data-screen-label="05 Recognition">
       <div className="container">
         <div className="spotlight-head">
           <div className="reveal">
-            <span className="section-label">Live signal</span>
+            <span className="section-label">Recognition</span>
             <h2 className="section-title">
-              Spotlight — what I'm <em>currently</em> building, researching, and learning.
+              Awards, scholarships, and <em>proof of work</em>.
             </h2>
           </div>
           <span className="right reveal">
-            <span className="ping"></span>
-            Last update · this week
+            2025 — 2026
           </span>
         </div>
 
         <div className="spotlight-grid">
-          {spotlight.map((s, i) => {
+          {recognition.map((s, i) => {
             const dirs = ["from-tl", "from-tr", "from-bl", "from-br"];
             return (
             <article
@@ -36,9 +35,9 @@ const Spotlight = () => {
               <h3 className="spot-title">{s.title}</h3>
               <p className="spot-body">{s.body}</p>
               <div className="spot-foot">
-                <span>0{i+1} / 0{spotlight.length}</span>
+                <span>0{i+1} / 0{recognition.length}</span>
                 {s.href ? (
-                  <a className="more" href={s.href} target="_blank" rel="noopener noreferrer">
+                  <a className="more" href={s.href} {...(s.href.startsWith("#") ? {} : { target: "_blank", rel: "noopener noreferrer" })}>
                     {s.more} <ArrowUR />
                   </a>
                 ) : (
@@ -56,4 +55,4 @@ const Spotlight = () => {
   );
 };
 
-window.Spotlight = Spotlight;
+window.Recognition = Recognition;
