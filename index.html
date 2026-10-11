@@ -3,30 +3,72 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Cephas Osei-Bonsu — Software Engineer · Founder @ Vital-Go</title>
-<meta name="description" content="Software engineer building AI-powered healthcare systems, real-time platforms, and IoT products. Founder @ Vital-Go." />
+<title>Cephas Osei-Bonsu · Software engineer, founder of Vital-Go</title>
+<meta name="description" content="Software engineer building AI and real-time systems: Vital-Go remote patient monitoring, Orra AI interview prep (300+ users), and a hackathon-winning sensor trust platform. CS and Math at Livingstone College, 4.0 GPA." />
+<meta name="theme-color" content="#08090b" />
+<link rel="canonical" href="https://cephastech.com/" />
+<link rel="icon" href="public/favicon.svg" type="image/svg+xml" />
+
+<meta property="og:type" content="profile" />
+<meta property="og:url" content="https://cephastech.com/" />
+<meta property="og:title" content="Cephas Osei-Bonsu · Software engineer, founder of Vital-Go" />
+<meta property="og:description" content="AI and real-time systems in production: Vital-Go, Orra (300+ users), SikaBoafo, and a hackathon win." />
+<meta property="og:image" content="https://cephastech.com/public/images/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Cephas Osei-Bonsu",
+  "url": "https://cephastech.com/",
+  "jobTitle": "Software Engineer",
+  "worksFor": { "@type": "Organization", "name": "Vital-Go", "url": "https://health.vital-go.org/" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Livingstone College" },
+  "sameAs": [
+    "https://github.com/CephasTechOrg",
+    "https://www.linkedin.com/in/cephas-osei-bonsu-911731326/"
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="public/images/portrait.webp" type="image/webp">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="root"></div>
+<div id="root">
+  <!-- NOTE: replaced as soon as React mounts; it is what crawlers and no-JS visitors see. -->
+  <noscript>
+    <main class="wrap" style="padding:96px 0">
+      <h1>Cephas Osei-Bonsu</h1>
+      <p>Software engineer and founder of Vital-Go. CS and Math at Livingstone College, 4.0 GPA.</p>
+      <p><a href="mailto:cephas.bonsuosei@gmail.com">cephas.bonsuosei@gmail.com</a> ·
+        <a href="https://github.com/CephasTechOrg">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/cephas-osei-bonsu-911731326/">LinkedIn</a> ·
+        <a href="public/Cephas-Osei-Bonsu-Resume.pdf">Resume</a></p>
+    </main>
+  </noscript>
+</div>
 
-<!-- React + Babel pinned -->
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<!-- React (production builds) + Babel, pinned with SRI -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
 <script type="text/babel" src="src/data.jsx"></script>
 <script type="text/babel" src="src/icons.jsx"></script>
+<script type="text/babel" src="src/ui.jsx"></script>
 <script type="text/babel" src="src/nav.jsx"></script>
 <script type="text/babel" src="src/hero.jsx"></script>
-<script type="text/babel" src="src/skills.jsx"></script>
-<script type="text/babel" src="src/philosophy.jsx"></script>
 <script type="text/babel" src="src/work.jsx"></script>
 <script type="text/babel" src="src/experience.jsx"></script>
-<script type="text/babel" src="src/spotlight.jsx"></script>
+<script type="text/babel" src="src/skills.jsx"></script>
+<script type="text/babel" src="src/about.jsx"></script>
 <script type="text/babel" src="src/contact.jsx"></script>
 <script type="text/babel" src="src/app.jsx"></script>
 </body>

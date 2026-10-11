@@ -1,101 +1,101 @@
 /* ------------------------------------------------------------------ */
-/* Work                                                                */
+/* Work: flagship block, project rows, and a compact "also built" list */
 /* ------------------------------------------------------------------ */
 
-const WorkLinkIcon = ({ kind }) => {
-  const s = { fill: "none", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round", strokeLinejoin: "round" };
-  if (kind === "github") return (
-    <svg viewBox="0 0 14 14" {...s}>
-      <path d="M7 1a6 6 0 0 0-1.9 11.7c.3 0 .4-.1.4-.3v-1c-1.7.4-2-.8-2-.8-.3-.7-.7-.9-.7-.9-.5-.4 0-.4 0-.4.6 0 .9.6.9.6.5.9 1.4.6 1.8.5 0-.4.2-.7.4-.8-1.4-.2-2.8-.7-2.8-3a2.4 2.4 0 0 1 .6-1.7c-.1-.2-.3-.8.1-1.6 0 0 .5-.2 1.7.6a5.8 5.8 0 0 1 3 0c1.2-.8 1.7-.6 1.7-.6.4.8.2 1.4.1 1.6.4.4.6 1 .6 1.7 0 2.3-1.4 2.8-2.8 3 .2.2.4.6.4 1.1V12.4c0 .2.1.3.4.3A6 6 0 0 0 7 1z"/>
-    </svg>
+const Metrics = ({ items, className = "" }) => (
+  <dl className={"metrics " + className}>
+    {items.map((m) => (
+      <div key={m.label} className="metric">
+        <dt>{m.label}</dt>
+        <dd>{m.value}</dd>
+      </div>
+    ))}
+  </dl>
+);
+
+const Flagship = () => {
+  const { flagship: f } = window.CEPHAS_DATA;
+  return (
+    <article className="flagship reveal" aria-labelledby="flagship-title">
+      <div className="flagship-head">
+        <div>
+          <p className="meta">Flagship · {f.role} · {f.years}</p>
+          <h3 id="flagship-title" className="flagship-title">{f.title}</h3>
+          <p className="flagship-summary">{f.summary}</p>
+          <ExternalLinks items={f.links} name={f.title} />
+        </div>
+        <Metrics items={f.metrics} className="metrics-grid" />
+      </div>
+
+      <div className="pipeline-block">
+        <p className="meta">How data moves</p>
+        <ol className="pipeline">
+          {f.pipeline.map((step, i) => (
+            <li key={step.name} className="pipeline-step">
+              <span className="pipeline-index">{i + 1}</span>
+              <span className="pipeline-name">{step.name}</span>
+              <span className="pipeline-note">{step.note}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <StackList items={f.stack} />
+    </article>
   );
-  if (kind === "demo" || kind === "site") return (
-    <svg viewBox="0 0 14 14" {...s}>
-      <circle cx="7" cy="7" r="5"/><path d="M2 7h10M7 2c1.5 1.5 2.2 3.3 2.2 5S8.5 10.5 7 12c-1.5-1.5-2.2-3.3-2.2-5S5.5 3.5 7 2z"/>
-    </svg>
-  );
-  if (kind === "case") return (
-    <svg viewBox="0 0 14 14" {...s}>
-      <rect x="2.5" y="3" width="9" height="8" rx="1"/><path d="M4 5.5h6M4 7.5h6M4 9.5h4"/>
-    </svg>
-  );
-  return <ArrowUR />;
 };
 
+const ProjectRow = ({ project, index }) => (
+  <li className="project reveal">
+    <span className="project-index">{String(index).padStart(2, "0")}</span>
+    <div className="project-main">
+      <h3 className="project-title">
+        {project.title}
+        <span className="project-kind">{project.kind}</span>
+      </h3>
+      <p className="project-summary">{project.summary}</p>
+      <StackList items={project.stack} />
+    </div>
+    <div className="project-side">
+      <p className="meta">{project.years}</p>
+      {project.metrics.length > 0 && <Metrics items={project.metrics} className="metrics-inline" />}
+      <ExternalLinks items={project.links} name={project.title} />
+    </div>
+  </li>
+);
+
 const Work = () => {
-  const { projects } = window.CEPHAS_DATA;
+  const { projects, alsoBuilt } = window.CEPHAS_DATA;
   return (
-    <section className="section" id="work" data-screen-label="03 Work">
-      <div className="container">
-        <div className="reveal">
-          <span className="section-label">Selected work · 2024 — 2026</span>
-          <h2 className="section-title">
-            Six projects sitting at the intersection of <em>AI, health, and real-time systems</em>.
-          </h2>
-        </div>
+    <section id="work" className="section">
+      <div className="wrap">
+        <SectionHeader
+          index="01"
+          label="Selected work"
+          title="Products in production, research, and a hackathon win."
+          lede="Each one shipped to real users or answered a real question. The numbers are measured, not projected."
+        />
 
-        <div className="work-list">
-          {projects.map((p, i) => {
-            const dirs = ["from-l", "from-r"];
-            const dirClass = dirs[i % 2];
-            return (
-            <article
-              key={p.id}
-              className={"work-row reveal " + dirClass + " " + (p.featured ? "featured" : "")}
-              style={{ ['--reveal-delay']: (i * 60) + 'ms' }}
-            >
-              <div className="num">{String(p.id).padStart(2, "0")}</div>
+        <Flagship />
 
-              <div>
-                {p.primaryUrl ? (
-                  <a
-                    className="work-title"
-                    href={p.primaryUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Open ${p.title} website`}
-                  >
-                    {p.title}
-                    <span className="arrow"><ArrowUR /></span>
-                  </a>
-                ) : (
-                  <span className="work-title is-static">{p.title}</span>
-                )}
-                {p.role && <div className="work-role">{p.role}</div>}
-                <p className="work-desc">{p.tagline}</p>
-                <div className="work-links">
-                  {p.links.map((l, idx) => l.soon ? (
-                    <span key={idx} className="work-link disabled" aria-disabled="true">
-                      {l.label} <span style={{opacity:.5}}>· coming soon</span>
-                    </span>
-                  ) : (
-                    <a
-                      key={idx}
-                      className="work-link"
-                      href={l.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${p.title} — ${l.label}`}
-                    >
-                      {l.label} <WorkLinkIcon kind={l.kind} />
-                    </a>
-                  ))}
-                </div>
-              </div>
+        <ol className="projects">
+          {projects.map((p, i) => <ProjectRow key={p.title} project={p} index={i + 2} />)}
+        </ol>
 
-              <div className="work-meta">
-                <div className="stack-row">
-                  {p.stack.map((t,idx) => <span key={idx} className="chip">{t}</span>)}
-                </div>
-                <p className="work-highlight">
-                  <strong>{p.year}</strong>
-                  <br />
-                  {p.highlight}
-                </p>
-              </div>
-            </article>
-            );
-          })}
+        <div className="also reveal">
+          <h3 className="sub-title">Also built</h3>
+          <ul className="also-list">
+            {alsoBuilt.map((item) => (
+              <li key={item.title}>
+                <a href={item.url} target="_blank" rel="noopener noreferrer" className="also-row">
+                  <span className="also-title">{item.title}</span>
+                  <span className="also-detail">{item.detail}</span>
+                  <span className="also-stack">{item.stack}</span>
+                  <ArrowUR className="also-arrow" />
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

@@ -1,210 +1,204 @@
 /* ------------------------------------------------------------------ */
-/* Data — projects, skills, experience, spotlight, links              */
+/* Data: everything the page says lives here, so updates are one edit. */
+/* WHY: every number below comes from the resume or the project repo.  */
+/* Keep it that way; an unverifiable claim costs more than it earns.   */
 /* ------------------------------------------------------------------ */
 
 const links = {
-  email:     "cephas.bonsuosei@gmail.com",
-  linkedin:  "https://www.linkedin.com/in/cephas-osei-bonsu-911731326/",
-  github:    "https://github.com/CephasTechOrg",
+  email:    "cephas.bonsuosei@gmail.com",
+  linkedin: "https://www.linkedin.com/in/cephas-osei-bonsu-911731326/",
+  github:   "https://github.com/CephasTechOrg",
+  resume:   "public/Cephas-Osei-Bonsu-Resume.pdf",
 };
 
-const skillsRow1 = [
-  { name: "Python",       icon: "python" },
-  { name: "FastAPI",      icon: "fastapi" },
-  { name: "Next.js",      icon: "nextjs" },
-  { name: "React",        icon: "react" },
-  { name: "TypeScript",   icon: "typescript" },
-  { name: "Tailwind CSS", icon: "tailwind" },
-  { name: "PostgreSQL",   icon: "postgres" },
-  { name: "Redis",        icon: "redis" },
-  { name: "Celery",       icon: "celery" },
-  { name: "Docker",       icon: "docker" },
+const availability = "Open to SWE internships, research and founder programs";
+
+// Headline proof, read left to right in the ledger under the hero.
+const proof = [
+  { value: "300+", label: "Users on Orra, my AI interview platform" },
+  { value: "100+", label: "Production API endpoints at Vital-Go" },
+  { value: "4.0",  label: "GPA in CS and Math, Presidential Scholar" },
+  { value: "50+",  label: "Members in the ColorStack chapter I founded" },
 ];
 
-const skillsRow2 = [
-  { name: "Supabase",      icon: "supabase" },
-  { name: "WebSockets",    icon: "websocket" },
-  { name: "ESP32",         icon: "chip" },
-  { name: "IoT",           icon: "iot" },
-  { name: "GitHub",        icon: "github" },
-  { name: "Flutter",       icon: "flutter" },
-  { name: "AI APIs",       icon: "ai" },
-  { name: "Data Science",  icon: "data" },
-  { name: "System Design", icon: "system" },
-  { name: "Healthcare AI", icon: "heart" },
-];
+// The flagship gets its own block: metrics, pipeline and stack.
+const flagship = {
+  title:   "Vital-Go",
+  role:    "Founder and software engineer",
+  years:   "2025 – present",
+  summary: "AI-powered remote patient monitoring. Wearable ESP32-C3 devices stream vitals to doctors and patients in real time, with abnormal-vitals alerts, AI risk scoring and clinical summaries.",
+  metrics: [
+    { value: "100+", label: "REST and WebSocket endpoints" },
+    { value: "8",    label: "API domains" },
+    { value: "25+",  label: "Production migrations" },
+    { value: "4",    label: "Celery workers" },
+    { value: "<2s",  label: "Device to dashboard" },
+    { value: "7",    label: "Real users, zero support tickets" },
+  ],
+  pipeline: [
+    { name: "ESP32-C3 device",    note: "Per-device JWT, secret rotation" },
+    { name: "FastAPI ingestion",  note: "20 req/min per device" },
+    { name: "Redis cache",        note: "Latest vitals, rolling windows" },
+    { name: "Celery workers",     note: "Alerts, aggregates, AI risk scores" },
+    { name: "Next.js dashboards", note: "Doctor and patient views" },
+  ],
+  stack: ["FastAPI", "PostgreSQL", "Redis", "Celery", "Next.js", "Supabase", "ESP32-C3", "LLM APIs"],
+  links: [
+    { label: "Live site", url: "https://health.vital-go.org/" },
+    { label: "GitHub",    url: "https://github.com/Vital-Go-Technologies" },
+  ],
+};
 
 const projects = [
   {
-    id: 1,
-    title: "Vital-Go",
-    primaryUrl: "https://health.vital-go.org/",
-    tagline: "AI-powered remote patient monitoring connecting wearables, doctors, and patients in real time.",
-    stack: ["FastAPI", "Next.js", "PostgreSQL", "Redis", "ESP32-C3", "Supabase", "AI APIs"],
-    highlight: "100+ REST/WebSocket endpoints, 4 Celery workers, <2s device-to-dashboard updates. Real-time vitals, abnormal-health alerts, doctor & patient dashboards, AI clinical insights, and medical report generation.",
-    role: "Founder & Software Engineer",
-    year: "2025 — Present",
-    featured: true,
+    title:   "Orra",
+    kind:    "AI interview prep",
+    years:   "2025 – present",
+    summary: "Voice-led mock interviews for SWE, PM, cybersecurity and internship roles. Role-based questions, live follow-ups on what the candidate actually says, and a scored report after every session.",
+    metrics: [
+      { value: "300+",  label: "Users" },
+      { value: "78.6%", label: "Session completion" },
+      { value: "4.64",  label: "Questions per session" },
+    ],
+    stack: ["FastAPI", "Next.js", "PostgreSQL", "RAG", "LLMs", "ElevenLabs"],
     links: [
-      { label: "Website",    url: "https://health.vital-go.org/",            kind: "site"   },
-      { label: "GitHub",     url: "https://github.com/Vital-Go-Technologies", kind: "github" },
-      { label: "Case Study", soon: true,                                      kind: "case"   },
+      { label: "Live site", url: "https://www.orrai.app" },
+      { label: "GitHub",    url: "https://github.com/CephasTechOrg/INTERVIEWPREP-APP" },
     ],
   },
   {
-    id: 2,
-    title: "Interview Prep AI",
-    primaryUrl: "https://www.orrai.app",
-    tagline: "AI-powered interview preparation for SWE, PM, cybersecurity, internships, and tech opportunities.",
-    stack: ["FastAPI", "Next.js", "PostgreSQL", "AI APIs"],
-    highlight: "Built for hundreds of users with realistic interview flows, role-aware follow-ups, scoring, and feedback.",
-    year: "2025",
+    title:   "SikaBoafo",
+    kind:    "Merchant OS for Ghana",
+    years:   "2025 – present",
+    summary: "Finance and inventory system for Ghanaian microbusinesses: sales, stock, debt tracking, QR and mobile-money payment links. Built offline-first for patchy connectivity.",
+    metrics: [
+      { value: "43", label: "Test users" },
+      { value: "50", label: "Endpoints across 13 modules" },
+      { value: "14", label: "Offline tables, device-keyed sync" },
+    ],
+    stack: ["FastAPI", "PostgreSQL", "Redis", "Flutter", "Paystack"],
     links: [
-      { label: "Website", url: "https://www.orrai.app",                                      kind: "site"   },
-      { label: "GitHub",  url: "https://github.com/CephasTechOrg/INTERVIEWPREP-APP",        kind: "github" },
+      { label: "GitHub", url: "https://github.com/CephasTechOrg/SikaBoafo" },
     ],
   },
   {
-    id: 3,
-    title: "SikaBoafo — Ghana Merchant OS",
-    tagline: "Ghana-focused business platform for sales, inventory, customers, mobile-money links, WhatsApp receipts, debt tracking, and profit analytics.",
-    stack: ["FastAPI", "Flutter", "PostgreSQL", "Paystack", "Mobile Money"],
-    highlight: "Designed for Ghanaian merchants who need simple tools, direct payment settlement, and practical offline-friendly workflows.",
-    year: "2025 — Present",
+    title:   "404 Sentinel",
+    kind:    "Hackathon winner",
+    years:   "2025",
+    summary: "Led a 24-hour build that won the MS-CC / ESIIL Cybersecurity and Environmental Data Hackathon. Explainable 0 to 100 trust scores for PurpleAir air-quality sensors, with attack simulation and blind CSV analysis.",
+    metrics: [
+      { value: "1st", label: "Place" },
+      { value: "8",   label: "Anomaly detection layers" },
+      { value: "24h", label: "Build time" },
+    ],
+    stack: ["Python", "Anomaly detection", "Data analysis"],
     links: [
-      { label: "GitHub", url: "https://github.com/CephasTechOrg/SikaBoafo", kind: "github" },
-      { label: "Demo",   soon: true,                                         kind: "demo"   },
+      { label: "GitHub", url: "https://github.com/CephasTechOrg/404-Sentinels" },
     ],
   },
   {
-    id: 4,
-    title: "LC Connect",
-    tagline: "Student-only campus connection platform for Livingstone College — find friends, study partners, language exchanges, and campus activities.",
-    stack: ["Flutter", "FastAPI", "PostgreSQL", "Supabase Realtime", "Supabase Storage", "JWT"],
-    highlight: "Profile cards, matching, mutual connections, real-time messaging, and an activity board — safe campus connections, not a dating app.",
-    year: "2026",
+    title:   "GPU scheduling simulator",
+    kind:    "UR²PhD research",
+    years:   "Feb – Apr 2026",
+    summary: "Simulator for multi-tenant ML clusters that benchmarks FIFO against constraint-aware job packing, with live dashboards for queue depth, GPU allocation, utilization and wait time.",
+    metrics: [],
+    stack: ["FastAPI", "Next.js", "Scheduling algorithms", "Simulation"],
     links: [
-      { label: "GitHub",     soon: true, kind: "github" },
-      { label: "Case Study", soon: true, kind: "case"   },
+      { label: "GitHub", url: "https://github.com/CephasTechOrg/AI-Driven-GPU-Scheduling-Simulator" },
     ],
   },
   {
-    id: 5,
-    title: "AI GPU Scheduling Simulator",
-    tagline: "Research simulator for AI-driven dynamic GPU and resource scheduling in multi-tenant ML clusters.",
-    stack: ["FastAPI", "Next.js", "Scheduling Algorithms", "Simulation Systems"],
-    highlight: "Benchmarks FIFO against constraint-aware job packing across workload patterns and queue distributions, with live dashboards for queue depth, utilization, and wait time.",
-    year: "Feb — Apr 2026 · UR²PhD Research",
+    title:   "TinyGPT",
+    kind:    "Transformer from scratch",
+    years:   "2026",
+    summary: "A decoder-only, GPT-style transformer written from first principles: tokenizer, dataset, causal self-attention, training and evaluation loops, checkpoints and a CLI chat. Configs scale from a laptop CPU to cloud GPUs.",
+    metrics: [],
+    stack: ["Python", "PyTorch", "Transformers"],
     links: [
-      { label: "GitHub",     url: "https://github.com/CephasTechOrg/AI-Driven-GPU-Scheduling-Simulator", kind: "github" },
-      { label: "Case Study", soon: true,                                                                 kind: "case"   },
+      { label: "GitHub", url: "https://github.com/CephasTechOrg/TinyGPT" },
     ],
   },
   {
-    id: 6,
-    title: "LC Campus Shuttle Tracking",
-    tagline: "Real-time shuttle tracking for off-campus students, powered by driver phone GPS and predefined routes.",
-    stack: ["FastAPI", "Flutter", "PostgreSQL", "Redis", "Live GPS"],
-    highlight: "Next-stop override, live ETA, and delay/cancellation push updates — built around the way students actually wait for the shuttle.",
-    year: "2026",
+    title:   "Clinic Co-Pilot",
+    kind:    "Clinical intake assistant",
+    years:   "2026",
+    summary: "One continuous flow for patient, nurse and doctor. Patients describe symptoms in plain language, nurses add vitals, and doctors get a structured brief with red flags and next questions. It supports judgment and never diagnoses.",
+    metrics: [],
+    stack: ["FastAPI", "SQLite", "LLM structured output", "Gemini translation"],
     links: [
-      { label: "GitHub",     url: "https://github.com/CephasTechOrg/LC-CAMPUS-SHUTTLE-SYSTEM", kind: "github" },
-      { label: "Case Study", soon: true,                                                       kind: "case"   },
+      { label: "GitHub", url: "https://github.com/CephasTechOrg/Clinic-Copilot" },
     ],
   },
+];
+
+// Smaller builds: one line each, so the main list stays focused.
+const alsoBuilt = [
+  { title: "LC Connect",        detail: "Student-only campus network with matching and real-time messaging", stack: "Flutter · FastAPI · Supabase", url: "https://github.com/CephasTechOrg/LC-CONNECT" },
+  { title: "LC Campus Shuttle", detail: "Live shuttle tracking from driver GPS, with ETAs and delay alerts",  stack: "Flutter · FastAPI · Redis",    url: "https://github.com/CephasTechOrg/LC-CAMPUS-SHUTTLE-SYSTEM" },
+  { title: "ApplyPilot",        detail: "Job application tracker with resume tailoring and email parsing",    stack: "Next.js · FastAPI · PostgreSQL", url: "https://github.com/CephasTechOrg/APPLY-PILOT" },
+  { title: "PDERAX",            detail: "AI document analyzer that summarizes uploads and exports reports",   stack: "FastAPI · Next.js · DeepSeek", url: "https://github.com/CephasTechOrg/PDERAX-AI-DOCUMENT-ANALYZER" },
 ];
 
 const experience = [
   {
-    date: "2025 — Present",
-    pill: "Now",
-    role: "Founder & Software Engineer",
-    org:  "Vital-Go",
-    body: "Architected an IoT health platform connecting ESP32-C3 devices, FastAPI/Postgres/Redis services, and Next.js dashboards.",
-    bullets: [
-      "100+ REST/WebSocket endpoints across 8 API domains, 25+ production migrations.",
-      "Per-device JWT auth, secret rotation, Redis vitals cache, 20 req/min ingestion limits.",
-      "4 Celery workers for alerts, rolling aggregates, AI risk scoring, and clinical summaries.",
-      "MVP validated with 7 real users · <2s device-to-dashboard updates · zero support tickets.",
+    years: "2025 – present",
+    role:  "Founder and software engineer",
+    org:   "Vital-Go",
+    points: [
+      "Architected the platform end to end: ESP32-C3 devices, FastAPI, PostgreSQL, Redis and Next.js dashboards.",
+      "Built 100+ REST and WebSocket endpoints across 8 API domains, with 25+ production migrations.",
+      "Added per-device JWT auth, secret rotation, a Redis vitals cache and 20 req/min ingestion limits.",
+      "Validated the MVP with 7 real users: under 2s device to dashboard, zero support tickets.",
     ],
   },
   {
-    date: "Feb — Apr 2026",
-    role: "Undergraduate Researcher · UR²PhD",
-    org:  "AI-Driven GPU Scheduling Optimization",
-    body: "Researching multi-tenant ML cluster scheduling to improve GPU utilization, queue latency, and fairness.",
-    bullets: [
-      "Built FastAPI/Next.js simulator comparing FIFO against constraint-aware job packing.",
-      "Live dashboards for queue depth, GPU allocation, utilization, wait time, and per-GPU placement.",
+    years: "Feb – Apr 2026",
+    role:  "Undergraduate researcher",
+    org:   "UR²PhD · AI-driven GPU scheduling",
+    points: [
+      "Studied multi-tenant ML cluster scheduling to improve GPU utilization, queue latency and fairness.",
+      "Built a FastAPI and Next.js simulator comparing FIFO with constraint-aware job packing.",
     ],
   },
   {
-    date: "2025",
-    role: "Software Engineer · 404 Sentinel",
-    org:  "MS-CC / ESIIL Cybersecurity & Environmental Data Hackathon",
-    body: "Led a 24-hour build of a cybersecurity platform that produced explainable 0–100 sensor trust scores for PurpleAir air-quality networks.",
-    bullets: [
-      "8-layer anomaly detection across correlation, z-score, drift, temporal, clustering, and pattern checks.",
-      "Open-sourced at github.com/CephasTechOrg/404-Sentinels.",
+    years: "Apr 2026 – present",
+    role:  "Founding president",
+    org:   "ColorStack at Livingstone College",
+    points: [
+      "Founded a 50+ member technical community for mentorship, workshops and internship readiness.",
+      "Secured $2K+ in early support for programming, outreach and member growth.",
     ],
-  },
-  {
-    date: "Apr 2026 — Present",
-    role: "Founding President",
-    org:  "ColorStack at Livingstone College",
-    body: "Founded a 50+ member technical community supporting mentorship, workshops, and internship readiness.",
-    bullets: [
-      "Secured $2K+ in early support for programming, outreach, and member growth.",
-    ],
-  },
-  {
-    date: "Jun 2026",
-    role: "Full-Scholarship Scholar",
-    org:  "HBCU Entrepreneurship Empowerment Summit",
-    body: "Selected as the only Livingstone College student awarded a full scholarship to the national summit, representing campus within the $16.8M PNC entrepreneurship center serving 101+ HBCUs.",
-    bullets: [],
   },
 ];
 
-const spotlight = [
-  {
-    tag: "Currently building",
-    when: "This week",
-    title: "Vital-Go — real-time vitals + AI clinical summaries",
-    body:  "Doctor dashboard for abnormal-vitals alerts and post-visit summaries from rolling 24h aggregates.",
-    more:  "health.vital-go.org",
-    href:  "https://health.vital-go.org/",
-    span:  "s-8",
-    now:   true,
-  },
-  {
-    tag: "Research",
-    when: "In progress",
-    title: "AI GPU scheduling",
-    body:  "Constraint-aware job packing vs. FIFO across workload mixes.",
-    more:  "GitHub",
-    href:  "https://github.com/CephasTechOrg/AI-Driven-GPU-Scheduling-Simulator",
-    span:  "s-4",
-  },
-  {
-    tag: "Community",
-    when: "Ongoing",
-    title: "Founding ColorStack at Livingstone College",
-    body:  "50+ student technical community. $2K+ raised for mentorship and workshops.",
-    more:  "Join",
-    span:  "s-6",
-  },
-  {
-    tag: "Recent win",
-    when: "2025",
-    title: "404 Sentinel — hackathon winner",
-    body:  "8-layer anomaly detection for PurpleAir air-quality sensor trust scoring.",
-    more:  "GitHub",
-    href:  "https://github.com/CephasTechOrg/404-Sentinels",
-    span:  "s-6",
-  },
+const recognition = [
+  { year: "2026", title: "Full scholarship, HBCU Entrepreneurship Empowerment Summit", detail: "The only Livingstone College student selected, within the $16.8M PNC center serving 101+ HBCUs" },
+  { year: "2025", title: "Winner, MS-CC / ESIIL Cybersecurity and Environmental Data Hackathon", detail: "Led the 404 Sentinel team through a 24-hour build" },
+  { year: "Now",  title: "Presidential Scholar, Livingstone College", detail: "4.0 GPA in Computer Science and Mathematics" },
+];
+
+const skills = [
+  { group: "Languages",           items: ["Python", "TypeScript", "JavaScript", "SQL", "C++", "Java"] },
+  { group: "Backend and systems", items: ["FastAPI", "Node.js", "PostgreSQL", "Redis", "Celery", "WebSockets", "JWT", "Docker"] },
+  { group: "Frontend and mobile", items: ["React", "Next.js", "React Native", "Flutter", "Expo", "Tailwind CSS"] },
+  { group: "AI, data and IoT",    items: ["RAG", "LLM APIs", "Embeddings", "OCR", "PyTorch", "AWS", "Supabase", "ESP32-C3"] },
+];
+
+const principles = [
+  { title: "Reliable by default",  body: "Per-device auth, rate limits, caches and rolling aggregates, so the boring failure modes never reach the user." },
+  { title: "Honest with users",    body: "Explainable scores and clear limits. Software that supports a clinician's or candidate's judgment instead of hiding it." },
+  { title: "Made for real people", body: "Offline-first flows, mobile-money settlement and low-bandwidth screens for clinicians, merchants and students." },
+];
+
+// NOTE: update `nowUpdated` whenever this list changes; a stale "now" reads worse than none.
+const nowUpdated = "October 2026";
+const now = [
+  { label: "Building", text: "Vital-Go: real-time vitals and AI clinical summaries" },
+  { label: "Growing",  text: "Orra and SikaBoafo with real users" },
+  { label: "Leading",  text: "ColorStack at Livingstone College" },
 ];
 
 Object.assign(window, { CEPHAS_DATA: {
-  links, skillsRow1, skillsRow2, projects, experience, spotlight,
+  links, availability, proof, flagship, projects, alsoBuilt,
+  experience, recognition, skills, principles, now, nowUpdated,
 }});
