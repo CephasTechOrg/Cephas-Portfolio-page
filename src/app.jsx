@@ -1,44 +1,54 @@
 /* ------------------------------------------------------------------ */
-/* App shell: assembles sections and runs the one-shot reveal.         */
+/* App shell — assembles sections + reveal observer                    */
 /* ------------------------------------------------------------------ */
 
 const App = () => {
   React.useEffect(() => {
+    // One-shot reveal on enter, with tight rootMargin for senior-feel timing
     const els = document.querySelectorAll(".reveal");
-    // WHY: without IntersectionObserver (or with reduced motion) show everything at once
-    // rather than leaving content stuck at opacity 0.
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce || !("IntersectionObserver" in window)) {
-      els.forEach((el) => el.classList.add("is-in"));
-      return undefined;
-    }
     const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-in");
-          io.unobserve(entry.target);
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
         }
       });
-    }, { rootMargin: "0px 0px -6% 0px", threshold: 0.08 });
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+
+    // Scroll progress bar
+    const bar = document.getElementById("scrollProgressBar");
+    const onScroll = () => {
+      const max = (document.documentElement.scrollHeight - window.innerHeight);
+      const p = max > 0 ? (window.scrollY / max) * 100 : 0;
+      if (bar) bar.style.setProperty("--p", p + "%");
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      io.disconnect();
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   return (
     <>
-      <a className="skip-link" href="#work">Skip to work</a>
+      <div className="scroll-progress" aria-hidden="true">
+        <span id="scrollProgressBar"></span>
+      </div>
       <Nav />
-      <main>
-        <Hero />
-        <Work />
-        <Experience />
-        <Skills />
-        <About />
-        <Contact />
-      </main>
+      <Hero />
+      <Skills />
+      <Philosophy />
+      <Work />
+      <Experience />
+      <Spotlight />
+      <Contact />
       <Footer />
     </>
   );
 };
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
